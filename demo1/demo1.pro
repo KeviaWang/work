@@ -1,6 +1,7 @@
 QT       += core gui
-
+QT += core gui sql
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+
 
 CONFIG += c++11
 
@@ -16,14 +17,47 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    disease.cpp \
+    doc_edit.cpp \
+    doc_information.cpp \
+    doc_plat.cpp \
+    docmain.cpp \
+    handleapment.cpp \
+    login.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    per_information.cpp \
+    platform.cpp \
+    signup.cpp \
+    viewapment.cpp
 
 HEADERS += \
-    mainwindow.h
+    disease.h \
+    doc_edit.h \
+    doc_information.h \
+    doc_plat.h \
+    docmain.h \
+    handleapment.h \
+    login.h \
+    mainwindow.h \
+    per_information.h \
+    platform.h \
+    signup.h \
+    viewapment.h
 
 FORMS += \
-    mainwindow.ui
+    disease.ui \
+    doc_edit.ui \
+    doc_information.ui \
+    doc_plat.ui \
+    docmain.ui \
+    handleapment.ui \
+    login.ui \
+    mainwindow.ui \
+    per_information.ui \
+    platform.ui \
+    signup.ui \
+    viewapment.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

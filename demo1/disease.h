@@ -14,8 +14,9 @@ class disease : public QWidget
 public:
     explicit disease(QWidget *parent = nullptr);
     ~disease();
+
 public:
-    void appendOneRow(QString name,QString dise);
+    void appendOneRow(QString name,QString dise,QString doctor,QString symptom,QString prescription,QString advice);
 
 private:
     Ui::disease *ui;

@@ -2,6 +2,10 @@
 #define LOGIN_H
 
 #include <QWidget>
+#include <QDialog>
+#include<QWidget>
+#include<QUdpSocket>
+#include<QMessageBox>
 
 namespace Ui {
 class login;
@@ -22,6 +26,11 @@ private slots:
 
 private:
     Ui::login *ui;
+    QUdpSocket* m_socket;
+    QHostAddress sql_ip;
+    quint16 sql_port;
+    QHostAddress my_ip;
+    quint16 my_port;
 };
 
 #endif // LOGIN_H

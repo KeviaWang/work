@@ -14,6 +14,11 @@ class viewApMent : public QWidget
 public:
     explicit viewApMent(QWidget *parent = nullptr);
     ~viewApMent();
+public:
+    void appendOneRow(QString name,QString gender,QString birth,QString height,QString weight,QString disease,QString family_history);
+
+private slots:
+    void on_pushButton_2_clicked();
 
 private:
     Ui::viewApMent *ui;

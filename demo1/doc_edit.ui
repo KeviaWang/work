@@ -23,17 +23,111 @@
     </rect>
    </property>
    <property name="text">
-    <string>quit</string>
+    <string>返回</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit">
+  <widget class="QLineEdit" name="nameEdit">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>30</y>
-     <width>113</width>
+     <x>30</x>
+     <y>40</y>
+     <width>250</width>
      <height>25</height>
     </rect>
+   </property>
+   <property name="placeholderText">
+    <string>请输入你的姓名</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="genderEdit">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>90</y>
+     <width>250</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>请输入你的性别</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="roomEdit">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>140</y>
+     <width>250</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>请输入你的科室</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="contactEdit">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>190</y>
+     <width>250</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>请输入你的联系方式</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="majorEdit">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>240</y>
+     <width>250</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>请输入你的专业领域</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="yearEdit">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>290</y>
+     <width>250</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>请输入你的工作年限</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="positionEdit">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>340</y>
+     <width>250</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>请输入你的职位</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>400</y>
+     <width>89</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>录入</string>
    </property>
   </widget>
  </widget>

@@ -15,7 +15,12 @@ public:
     explicit doc_information(QWidget *parent = nullptr);
     ~doc_information();
 public:
-void appendOneRow(QString name,QString number);
+void appendOneRow(QString name,QString gender,QString room,QString contact,QString positon,QString major,QString year);
+
+private slots:
+void on_pushButton_3_clicked();
+
+void on_pushButton_2_clicked();
 
 private:
     Ui::doc_information *ui;

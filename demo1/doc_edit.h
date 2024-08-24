@@ -15,6 +15,9 @@ public:
     explicit doc_edit(QWidget *parent = nullptr);
     ~doc_edit();
 
+private slots:
+    void on_pushButton_2_clicked();
+
 private:
     Ui::doc_edit *ui;
 };

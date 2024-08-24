@@ -6,6 +6,9 @@
 #include<QWidget>
 #include<QUdpSocket>
 #include<QMessageBox>
+#include <QHostInfo>
+#include<QHostAddress>
+#include<QDataStream>
 
 namespace Ui {
 class login;
@@ -23,6 +26,7 @@ private slots:
     void on_signup_btn_clicked();
 
     void on_logBtn_clicked();
+    void read_data();
 
 private:
     Ui::login *ui;

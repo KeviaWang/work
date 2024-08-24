@@ -22,7 +22,7 @@ disease::disease(QWidget *parent) :
 
     ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch); //填充列的宽度
 
-    appendOneRow("lily","hot","a","b","c","d");//在这里输入传过来的信息
+
 }
 
 disease::~disease()
@@ -51,4 +51,10 @@ void disease::appendOneRow(QString name,QString dise,QString doctor,QString symp
    ui->tableWidget->setItem(0,4,prescriptionItem);
    ui->tableWidget->setItem(0,5,adviceItem);
 
+}
+
+void disease::on_pushButton_2_clicked()
+{
+    //发送信息，要求数据库传送过来表中所需的数据
+    appendOneRow("lily","hot","a","b","c","d");//在这里输入传过来的信息
 }

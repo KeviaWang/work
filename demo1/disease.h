@@ -18,6 +18,9 @@ public:
 public:
     void appendOneRow(QString name,QString dise,QString doctor,QString symptom,QString prescription,QString advice);
 
+private slots:
+    void on_pushButton_2_clicked();
+
 private:
     Ui::disease *ui;
 };

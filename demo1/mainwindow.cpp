@@ -4,6 +4,7 @@
 #include "disease.h"
 #include "doc_information.h"
 #include "per_information.h"
+#include "healthassessment.h"
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -39,4 +40,10 @@ void MainWindow::on_pushButton_8_clicked()
 {
     platform *plat = new platform;
     plat->show();
+}
+
+void MainWindow::on_pushButton_9_clicked()
+{
+    healthassessment *heal = new healthassessment;
+    heal->show();
 }

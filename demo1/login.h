@@ -14,6 +14,7 @@
 #include <QJsonValue>
 
 extern QString MainUser;
+
 namespace Ui {
 class login;
 }

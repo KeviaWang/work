@@ -9,6 +9,9 @@
 #include <QSqlQuery>               //最后应该用不上
 #include <QSqlError>               //最后应该用不上
 #include <QDebug>
+
+QString MainUser="user";
+
 login::login(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::login)
@@ -99,6 +102,7 @@ void login::read_data()
                 if(ui->doctorButton->isChecked())
                 {
                 QMessageBox::information(NULL,"信息","登录成功");
+                MainUser=ui->userLineEdit->text();
                 this->close();
                 docMain docM;
                 docM.show();
@@ -107,7 +111,7 @@ void login::read_data()
                 else
                 {
                 QMessageBox::information(NULL,"信息","登录成功");
-
+                MainUser=ui->userLineEdit->text();
                 this->close();
                 MainWindow *w = new MainWindow;
                 w->show();

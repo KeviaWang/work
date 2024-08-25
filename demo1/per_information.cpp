@@ -48,6 +48,7 @@ void per_information::on_pushButton_2_clicked()
     QString insurance = ui->lineEdit_12->text().trimmed();
     QString emergency = ui->lineEdit_13->text().trimmed();
 
+
     QString datastr = QString(R"([
             {
                 "sign":"%1",

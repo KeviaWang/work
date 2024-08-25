@@ -43,6 +43,7 @@ void doc_edit::on_pushButton_2_clicked()
     QString major =ui->majorEdit->text().trimmed();
     QString year =ui->yearEdit->text().trimmed();//要送到表里的数据
 
+
     QString datastr = QString(R"([
             {
                 "sign":"%1",

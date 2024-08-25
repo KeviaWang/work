@@ -23,6 +23,7 @@ SOURCES += \
     doc_plat.cpp \
     docmain.cpp \
     handleapment.cpp \
+    healthassessment.cpp \
     login.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -38,6 +39,7 @@ HEADERS += \
     doc_plat.h \
     docmain.h \
     handleapment.h \
+    healthassessment.h \
     login.h \
     mainwindow.h \
     per_information.h \
@@ -52,6 +54,7 @@ FORMS += \
     doc_plat.ui \
     docmain.ui \
     handleapment.ui \
+    healthassessment.ui \
     login.ui \
     mainwindow.ui \
     per_information.ui \

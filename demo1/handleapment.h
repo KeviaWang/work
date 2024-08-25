@@ -15,6 +15,9 @@ public:
     explicit handleApment(QWidget *parent = nullptr);
     ~handleApment();
 
+private slots:
+    void on_tijiaoButton_clicked();
+
 private:
     Ui::handleApment *ui;
 };

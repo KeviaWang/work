@@ -1,6 +1,8 @@
 #include "disease.h"
 #include "ui_disease.h"
-
+#include <QTextEdit>
+#include <QApplication>
+#include <QTableWidget>
 disease::disease(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::disease)
@@ -18,11 +20,14 @@ disease::disease(QWidget *parent) :
     hlist << "prescription";
     hlist << "advice";
 
+
+    ui->tableWidget->setRowHeight(0, 200);
+
     ui->tableWidget->setHorizontalHeaderLabels(hlist);
 
-    ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch); //填充列的宽度
+    ui->tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
-
+    ui->tableWidget->setColumnWidth(5,300);
 }
 
 disease::~disease()
@@ -41,8 +46,15 @@ void disease::appendOneRow(QString name,QString dise,QString doctor,QString symp
    QTableWidgetItem * prescriptionItem=new QTableWidgetItem(prescription);
    QTableWidgetItem * adviceItem=new QTableWidgetItem(advice);
 
-   nameItem->setTextAlignment(Qt::AlignCenter);
-   diseItem->setTextAlignment(Qt::AlignCenter);//居中
+
+   //QTextEdit *textEdit = new QTextEdit();
+   //textEdit->setText(advice);
+   //textEdit->setWordWrapMode(QTextOption::WordWrap); // Ensure text wraps
+   //ui->tableWidget->setCellWidget(0, 5, textEdit);
+
+
+
+
 
    ui->tableWidget->setItem(0,0,nameItem);
    ui->tableWidget->setItem(0,1,diseItem);
@@ -51,10 +63,11 @@ void disease::appendOneRow(QString name,QString dise,QString doctor,QString symp
    ui->tableWidget->setItem(0,4,prescriptionItem);
    ui->tableWidget->setItem(0,5,adviceItem);
 
+
 }
 
 void disease::on_pushButton_2_clicked()
 {
     //发送信息，要求数据库传送过来表中所需的数据
-    appendOneRow("lily","hot","a","b","c","d");//在这里输入传过来的信息
+    appendOneRow("lily","hot","a","b","c","多读书多看报，少吃零食多睡觉uioashdfuoiewdfbjkasdbiadg");//在这里输入传过来的信息
 }

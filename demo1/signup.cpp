@@ -11,11 +11,31 @@ signup::signup(QWidget *parent) :
     ui(new Ui::signup)
 {
     ui->setupUi(this);
+    m_socket=new QUdpSocket(this);
+    QHostInfo info = QHostInfo::fromName(QHostInfo::localHostName());
+    my_ip = info.addresses().first();
+
+    qDebug()<<"my ip "<<my_ip<<endl;
+    my_port=8888;
+    sql_ip=QHostAddress("192.168.254.129");
+    sql_port=8888;
+
+    //接受数据绑定
+    m_socket->bind(my_ip,my_port);
+    bool bindResult=connect(m_socket,SIGNAL(readyRead()),this,SLOT(read_data()));
+    if(!bindResult)
+    {
+        QMessageBox::warning(this, tr("Waring"),
+                              tr("binding error!"),
+                                 QMessageBox::Yes);
+        return; //退出
+    }
 }
 
 signup::~signup()
 {
     delete ui;
+    delete  m_socket;
 }
 
 void signup::on_pushButton_2_clicked()
@@ -27,22 +47,31 @@ void signup::on_pushButton_2_clicked()
     if(password==confirmword)  //same
     {
 
-        //改为向数据端发送socket,现在没数据库，肯定插入失败
-        QString ins=QString("insert into user(username,password) values('%1','%2');")
-                .arg(username).arg(password);
-        QSqlQuery query;
-
-        //如果可以收到插入成功的信号，可保留下面的代码
-        if(!query.exec(ins))
-        {
-            qDebug()<<"insert into error";
-            QMessageBox::information(this,"确定","插入失败！");
-        }
+        //改为向数据端发送socket
+        // 操作信号：0：医生端注册 1：患者端注册 2：医生端登录 3：患者端登录 4：医生端编辑个人信息 5：患者端编辑个人信息
+        //          6：查看挂号信息 7：编写病例 8：编写处方和缴费 9：查看病例 10：查看处方和缴费 11：查看医生信息 12：医生端获取患者ip
+        //          13：患者端获取医生ip
+        QString sign;
+        if(ui->doc_btn->isChecked())
+        sign="0";
         else
-        {
-            qDebug()<<"insert into sucess";
-            QMessageBox::information(this,"确定","插入成功！");
-        }
+        sign="1";
+
+
+        QString datastr = QString(R"([
+                {
+                    "sign":"%1","username":"%2","password":"%3","ip":"%4","port":"%5"
+                }
+
+            ])").arg(sign).arg(username).arg(password).arg(my_ip.toString()).arg(my_port);
+
+        QJsonDocument jsondoc=QJsonDocument::fromJson(datastr.toUtf8());
+
+        //转换成QByterarray发送
+        QByteArray datagram=jsondoc.toJson();
+        m_socket->writeDatagram(datagram, sql_ip, sql_port);
+
+
     }
     else
     {
@@ -55,4 +84,30 @@ void signup::on_pushButton_clicked()
     login *log = new login;
     this->close();
     log->show();
+}
+
+void signup::read_data()
+{
+    //读取udp socket的数据缓冲区，接收数据
+    while(m_socket->hasPendingDatagrams())
+    {
+        QByteArray datagram;
+        datagram.resize(m_socket->pendingDatagramSize());
+
+    //读取缓冲区数据并显示
+        m_socket->readDatagram(datagram.data(), datagram.size());
+        QString str = datagram.data();
+        if(str=="1")
+        {
+            QMessageBox::information(NULL,"信息","注册成功");
+            return ;
+        }
+        else
+        {
+            QMessageBox::information(NULL,"信息","注册失败");
+            return;
+        }
+
+    }
+
 }

@@ -16,13 +16,10 @@ public:
     ~docMain();
 
 private slots:
-    void on_pushButton_2_clicked();
+    void on_gerenxinxi_clicked();
 
-    void on_pushButton_3_clicked();
+    void on_bingqingchuli_clicked();
 
-    void on_pushButton_4_clicked();
-
-    void on_pushButton_5_clicked();
 
 private:
     Ui::docMain *ui;

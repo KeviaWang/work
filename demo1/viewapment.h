@@ -20,6 +20,10 @@ public:
 private slots:
     void on_pushButton_2_clicked();
 
+    void on_goutong_clicked();
+
+    void on_chufangyizhu_clicked();
+
 private:
     Ui::viewApMent *ui;
 };

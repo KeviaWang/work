@@ -26,20 +26,7 @@
     <string>quit</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_4">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>300</y>
-     <width>100</width>
-     <height>50</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>处理患者信息</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_3">
+  <widget class="QPushButton" name="bingqingchuli">
    <property name="geometry">
     <rect>
      <x>90</x>
@@ -49,10 +36,10 @@
     </rect>
    </property>
    <property name="text">
-    <string>预约患者信息</string>
+    <string>病情处理</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="gerenxinxi">
    <property name="geometry">
     <rect>
      <x>90</x>
@@ -63,19 +50,6 @@
    </property>
    <property name="text">
     <string>编辑个人信息</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_5">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>400</y>
-     <width>100</width>
-     <height>50</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>医患交流</string>
    </property>
   </widget>
  </widget>

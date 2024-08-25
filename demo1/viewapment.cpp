@@ -1,5 +1,7 @@
 #include "viewapment.h"
 #include "ui_viewapment.h"
+#include "platform.h"
+#include "handleapment.h"
 
 viewApMent::viewApMent(QWidget *parent) :
     QWidget(parent),
@@ -8,7 +10,7 @@ viewApMent::viewApMent(QWidget *parent) :
     ui->setupUi(this);
 
     ui->tableWidget->setColumnCount(7);
-    ui->tableWidget->setRowCount(1);
+    ui->tableWidget->setRowCount(4);
 
     QStringList hlist;
     hlist << "name";
@@ -22,6 +24,9 @@ viewApMent::viewApMent(QWidget *parent) :
     ui->tableWidget->setHorizontalHeaderLabels(hlist);
 
     ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch); //填充列的宽度
+    ui->tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+
+    ui->tableWidget->resizeRowsToContents();
 }
 
 void viewApMent::appendOneRow(QString name,QString gender,QString birth,QString height,QString weight,QString disease,QString family_history)
@@ -63,7 +68,29 @@ viewApMent::~viewApMent()
 
 void viewApMent::on_pushButton_2_clicked()
 {
+    //接受数据库传来的信息
+    QString name="aaa";
+    QString gender="b";
+    QString birth="c";
+    QString height="d";
+    QString weight="e";
+    QString disease="f";
+    QString family_history="g";
 
 
-    appendOneRow("a","s","d","r","w","x","z");
+
+
+    appendOneRow(name,gender,birth,height,weight,disease,family_history);
+}
+
+void viewApMent::on_goutong_clicked()
+{
+    platform * plat = new platform;
+    plat->show();
+}
+
+void viewApMent::on_chufangyizhu_clicked()
+{
+    handleApment * hand = new handleApment;
+    hand->show();
 }

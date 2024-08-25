@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QPushButton" name="tuichuButton">
+  <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
      <x>460</x>
@@ -23,96 +23,14 @@
     </rect>
    </property>
    <property name="text">
-    <string>退出</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>20</y>
-     <width>67</width>
-     <height>17</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>病例</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="bingliEdit">
-   <property name="geometry">
-    <rect>
-     <x>100</x>
-     <y>20</y>
-     <width>200</width>
-     <height>25</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="yizhuEdit">
-   <property name="geometry">
-    <rect>
-     <x>100</x>
-     <y>100</y>
-     <width>200</width>
-     <height>25</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>100</y>
-     <width>67</width>
-     <height>17</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>医嘱</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="chufangEdit">
-   <property name="geometry">
-    <rect>
-     <x>100</x>
-     <y>180</y>
-     <width>200</width>
-     <height>25</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_3">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>180</y>
-     <width>67</width>
-     <height>17</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>处方</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="tijiaoButton">
-   <property name="geometry">
-    <rect>
-     <x>460</x>
-     <y>400</y>
-     <width>89</width>
-     <height>25</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>提交</string>
+    <string>quit</string>
    </property>
   </widget>
  </widget>
  <resources/>
  <connections>
   <connection>
-   <sender>tuichuButton</sender>
+   <sender>pushButton</sender>
    <signal>clicked()</signal>
    <receiver>handleApment</receiver>
    <slot>close()</slot>

@@ -14,9 +14,7 @@ class handleApment : public QWidget
 public:
     explicit handleApment(QWidget *parent = nullptr);
     ~handleApment();
-
-private slots:
-    void on_tijiaoButton_clicked();
+    QString patient_name;
 
 private:
     Ui::handleApment *ui;

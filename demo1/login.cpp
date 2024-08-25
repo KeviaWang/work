@@ -61,8 +61,7 @@ void login::on_logBtn_clicked()
     QString username =ui->userLineEdit->text().trimmed();
     QString password =ui->passLineEdit->text();
     // 操作信号：0：医生端注册 1：患者端注册 2：医生端登录 3：患者端登录 4：医生端编辑个人信息 5：患者端编辑个人信息
-    //          6：查看挂号信息 7：编写病例 8：编写处方和缴费 9：查看病例 10：查看处方和缴费 11：查看医生信息 12：医生端获取患者ip
-    //          13：患者端获取医生ip
+    //          6：查看挂号信息 7：编写病例 编写处方和缴费 8：查看病例、查看处方和缴费 9：查看医生信息
     QString sign;
     if(ui->doctorButton->isChecked())
     sign="2";

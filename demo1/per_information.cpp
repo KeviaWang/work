@@ -70,7 +70,7 @@ void per_information::on_pushButton_2_clicked()
                 "port":"%17"
             },
 
-        ])").arg(4).arg(MainUser).arg(name).arg(gender).arg(birth).arg(height).arg(weight).arg(contact).arg(home)
+        ])").arg(5).arg(MainUser).arg(name).arg(gender).arg(birth).arg(height).arg(weight).arg(contact).arg(home)
             .arg(ID).arg(disease).arg(family_history).arg(medicine_use).arg(insurance).arg(emergency).arg(my_ip.toString()).arg(my_port);
 
     QJsonDocument jsondoc=QJsonDocument::fromJson(datastr.toUtf8());

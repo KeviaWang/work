@@ -1,7 +1,6 @@
 #ifndef LOGIN_H
 #define LOGIN_H
 
-#include <QWidget>
 #include <QDialog>
 #include<QWidget>
 #include<QUdpSocket>
@@ -9,7 +8,12 @@
 #include <QHostInfo>
 #include<QHostAddress>
 #include<QDataStream>
+#include <QJsonDocument>
+#include <QJsonArray>
+#include <QJsonObject>
+#include <QJsonValue>
 
+extern QString MainUser;
 namespace Ui {
 class login;
 }
@@ -32,9 +36,10 @@ private:
     Ui::login *ui;
     QUdpSocket* m_socket;
     QHostAddress sql_ip;
-    quint16 sql_port;
+    int sql_port;
     QHostAddress my_ip;
-    quint16 my_port;
+    int my_port;
+
 };
 
 #endif // LOGIN_H

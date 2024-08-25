@@ -17,6 +17,8 @@ login::login(QWidget *parent) :
     m_socket=new QUdpSocket(this);
     QHostInfo info = QHostInfo::fromName(QHostInfo::localHostName());
     my_ip = info.addresses().first();
+
+    qDebug()<<"my ip "<<my_ip<<endl;
     my_port=8888;
     sql_ip=QHostAddress("192.168.254.129");
     sql_port=8888;
@@ -50,7 +52,7 @@ void login::on_logBtn_clicked()
         QMessageBox::warning(this, tr("Waring"),
                               tr("binding error!"),
                                  QMessageBox::Yes);
-        return;
+        return; //退出
     }
 
     QString username =ui->userLineEdit->text().trimmed();
@@ -64,15 +66,19 @@ void login::on_logBtn_clicked()
     else
     sign="3";
 
-    //向数据库发送数据
-    QByteArray datagram;
-    QDataStream out(&datagram, QIODevice::WriteOnly);
-    out.setVersion(QDataStream::Qt_5_9); // 设置QDataStream的版本
-    out << sign<<username << password<<my_ip.toString()<<QString(my_port);
 
-    m_socket->writeDatagram(datagram,sql_ip,sql_port);
+    QString datastr = QString(R"([
+            {
+                "sign":"%1","username":"%2","password":"%3","ip":"%4","port":"%5"
+            }
 
+        ])").arg(sign).arg(username).arg(password).arg(my_ip.toString()).arg(my_port);
 
+    QJsonDocument jsondoc=QJsonDocument::fromJson(datastr.toUtf8());
+
+    //转换成QByterarray发送
+    QByteArray datagram=jsondoc.toJson();
+    m_socket->writeDatagram(datagram, sql_ip, sql_port);
 
 }
 

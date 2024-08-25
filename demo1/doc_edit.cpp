@@ -8,8 +8,15 @@ doc_edit::doc_edit(QWidget *parent) :
 {
     ui->setupUi(this);
     m_socket=new QUdpSocket(this);
-    QHostInfo info = QHostInfo::fromName(QHostInfo::localHostName());
-    my_ip = info.addresses().first();
+    //获得本机ip
+    foreach (const QHostAddress &address, QNetworkInterface::allAddresses()) {
+        if (address.protocol() == QAbstractSocket::IPv4Protocol &&
+            address != QHostAddress::LocalHost) {
+            my_ip = address;
+            break;
+        }
+    }
+
     my_port=8888;
     sql_ip=QHostAddress("192.168.254.129");
     sql_port=8888;

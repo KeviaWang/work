@@ -9,7 +9,7 @@ disease::disease(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    ui->tableWidget->setColumnCount(6);   //修改列数
+    ui->tableWidget->setColumnCount(7);   //修改列数
     ui->tableWidget->setRowCount(1);
 
     QStringList hlist;
@@ -19,6 +19,7 @@ disease::disease(QWidget *parent) :
     hlist << "symptom";
     hlist << "prescription";
     hlist << "advice";
+    hlist << "money";
 
 
     ui->tableWidget->setRowHeight(0, 200);
@@ -27,7 +28,7 @@ disease::disease(QWidget *parent) :
 
     ui->tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
-    ui->tableWidget->setColumnWidth(5,300);
+    ui->tableWidget->setColumnWidth(6,300);
 }
 
 disease::~disease()
@@ -35,7 +36,7 @@ disease::~disease()
     delete ui;
 }
 
-void disease::appendOneRow(QString name,QString dise,QString doctor,QString symptom,QString prescription,QString advice)
+void disease::appendOneRow(QString name,QString dise,QString doctor,QString symptom,QString prescription,QString money,QString advice)
 {
 
 
@@ -44,6 +45,7 @@ void disease::appendOneRow(QString name,QString dise,QString doctor,QString symp
    QTableWidgetItem * doctorItem=new QTableWidgetItem(doctor);
    QTableWidgetItem * symptomItem=new QTableWidgetItem(symptom);
    QTableWidgetItem * prescriptionItem=new QTableWidgetItem(prescription);
+   QTableWidgetItem * moneyItem = new QTableWidgetItem(money);
    QTableWidgetItem * adviceItem=new QTableWidgetItem(advice);
 
 
@@ -61,13 +63,17 @@ void disease::appendOneRow(QString name,QString dise,QString doctor,QString symp
    ui->tableWidget->setItem(0,2,doctorItem);
    ui->tableWidget->setItem(0,3,symptomItem);
    ui->tableWidget->setItem(0,4,prescriptionItem);
-   ui->tableWidget->setItem(0,5,adviceItem);
+   ui->tableWidget->setItem(0,5,moneyItem);
+   ui->tableWidget->setItem(0,6,adviceItem);
 
 
 }
 
 void disease::on_pushButton_2_clicked()
 {
+    // 操作信号：0：医生端注册 1：患者端注册 2：医生端登录 3：患者端登录 4：医生端编辑个人信息 5：患者端编辑个人信息
+    //          6：查看挂号信息 7：编写病例 编写处方和缴费 8：查看病例、查看处方和缴费 9：查看医生信息
+
     //发送信息，要求数据库传送过来表中所需的数据
-    appendOneRow("lily","hot","a","b","c","多读书多看报，少吃零食多睡觉uioashdfuoiewdfbjkasdbiadg");//在这里输入传过来的信息
+    appendOneRow("name","disease","doctor","symbol","prescription","money","多读书多看报，少吃零食多睡觉");//在这里输入传过来的信息
 }

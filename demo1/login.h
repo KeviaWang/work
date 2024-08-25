@@ -12,8 +12,10 @@
 #include <QJsonArray>
 #include <QJsonObject>
 #include <QJsonValue>
+#include <QNetworkInterface>
 
 extern QString MainUser;
+
 
 namespace Ui {
 class login;

@@ -2,6 +2,7 @@
 #define PLATFORM_H
 
 #include <QWidget>
+#include <QNetworkInterface>
 
 namespace Ui {
 class platform;

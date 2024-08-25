@@ -27,10 +27,17 @@ viewApMent::viewApMent(QWidget *parent) :
     ui->tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
     ui->tableWidget->resizeRowsToContents();
-    // 本机与数据库端ip端口
+
+
     m_socket=new QUdpSocket(this);
-    QHostInfo info = QHostInfo::fromName(QHostInfo::localHostName());
-    my_ip = info.addresses().first();
+    //获得本机ip
+    foreach (const QHostAddress &address, QNetworkInterface::allAddresses()) {
+        if (address.protocol() == QAbstractSocket::IPv4Protocol &&
+            address != QHostAddress::LocalHost) {
+            my_ip = address;
+            break;
+        }
+    }
 
     qDebug()<<"my ip "<<my_ip<<endl;
     my_port=8888;

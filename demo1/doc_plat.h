@@ -2,6 +2,7 @@
 #define DOC_PLAT_H
 
 #include <QWidget>
+#include <QNetworkInterface>
 
 namespace Ui {
 class doc_plat;

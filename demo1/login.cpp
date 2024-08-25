@@ -18,10 +18,16 @@ login::login(QWidget *parent) :
 {
     ui->setupUi(this);
     m_socket=new QUdpSocket(this);
-    QHostInfo info = QHostInfo::fromName(QHostInfo::localHostName());
-    my_ip = info.addresses().first();
-
+    //获得本机ip
+    foreach (const QHostAddress &address, QNetworkInterface::allAddresses()) {
+        if (address.protocol() == QAbstractSocket::IPv4Protocol &&
+            address != QHostAddress::LocalHost) {
+            my_ip = address;
+            break;
+        }
+    }
     qDebug()<<"my ip "<<my_ip<<endl;
+
     my_port=8888;
     sql_ip=QHostAddress("192.168.254.129");
     sql_port=8888;
@@ -56,6 +62,7 @@ void login::on_logBtn_clicked()
                                  QMessageBox::Yes);
         return;
     }
+
     connect(m_socket, SIGNAL(readyRead()), this, SLOT(recvdata()));    //绑定接收
 
     QString username =ui->userLineEdit->text().trimmed();

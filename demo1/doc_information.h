@@ -2,6 +2,7 @@
 #define DOC_INFORMATION_H
 
 #include <QWidget>
+#include <QNetworkInterface>
 
 namespace Ui {
 class doc_information;

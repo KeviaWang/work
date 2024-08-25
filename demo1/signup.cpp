@@ -12,8 +12,14 @@ signup::signup(QWidget *parent) :
 {
     ui->setupUi(this);
     m_socket=new QUdpSocket(this);
-    QHostInfo info = QHostInfo::fromName(QHostInfo::localHostName());
-    my_ip = info.addresses().first();
+    //获得本机ip
+    foreach (const QHostAddress &address, QNetworkInterface::allAddresses()) {
+        if (address.protocol() == QAbstractSocket::IPv4Protocol &&
+            address != QHostAddress::LocalHost) {
+            my_ip = address;
+            break;
+        }
+    }
 
     qDebug()<<"my ip "<<my_ip<<endl;
     my_port=8888;

@@ -2,6 +2,7 @@
 #define HEALTHASSESSMENT_H
 
 #include <QWidget>
+#include <QNetworkInterface>
 
 namespace Ui {
 class healthassessment;

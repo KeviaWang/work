@@ -2,6 +2,7 @@
 #define DOCMAIN_H
 
 #include <QWidget>
+#include <QNetworkInterface>
 
 namespace Ui {
 class docMain;

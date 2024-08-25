@@ -68,7 +68,7 @@ void login::on_logBtn_clicked()
     QByteArray datagram;
     QDataStream out(&datagram, QIODevice::WriteOnly);
     out.setVersion(QDataStream::Qt_5_9); // 设置QDataStream的版本
-    out << sign<<username << password<<username<<password;
+    out << sign<<username << password<<my_ip.toString()<<QString(my_port);
 
     m_socket->writeDatagram(datagram,sql_ip,sql_port);
 
@@ -89,17 +89,19 @@ void login::read_data()
             QString sign = datagram.data();
             if(sign=="1")
             {
-
+                QString MainUser=ui->userLineEdit->text().trimmed();
                 if(ui->doctorButton->isChecked())
                 {
                 QMessageBox::information(NULL,"信息","登录成功");
                 this->close();
-                docMain *docM=new docMain;
-                docM->show();
+                docMain docM;
+                docM.show();
+
                 }
                 else
                 {
                 QMessageBox::information(NULL,"信息","登录成功");
+
                 this->close();
                 MainWindow *w = new MainWindow;
                 w->show();

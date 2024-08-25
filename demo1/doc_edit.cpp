@@ -32,9 +32,8 @@ void doc_edit::on_pushButton_2_clicked()
                                  QMessageBox::Yes);
         return;
     }
-
-
     connect(m_socket, SIGNAL(readyRead()), this, SLOT(recvdata()));    //绑定接收
+
     QString name =ui->nameEdit->text().trimmed();
     QString gender =ui->genderEdit->text().trimmed();
     QString room =ui->roomEdit->text().trimmed();

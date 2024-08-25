@@ -21,15 +21,15 @@ signup::signup(QWidget *parent) :
     sql_port=8888;
 
     //接受数据绑定
-    m_socket->bind(my_ip,my_port);
-    bool bindResult=connect(m_socket,SIGNAL(readyRead()),this,SLOT(read_data()));
+    bool bindResult = m_socket->bind(my_ip, my_port);
     if(!bindResult)
     {
         QMessageBox::warning(this, tr("Waring"),
-                              tr("binding error!"),
+                              tr("binding self error!"),
                                  QMessageBox::Yes);
-        return; //退出
+        return;
     }
+    connect(m_socket, SIGNAL(readyRead()), this, SLOT(recvdata()));    //绑定接收
 }
 
 signup::~signup()

@@ -1,21 +1,21 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#ifndef GUAHAO_H
+#define GUAHAO_H
 
 #include <QMainWindow>
 #include <QSqlDatabase>
 #include <QSqlQuery>
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
+namespace Ui { class Guahao; }  // 这只是一个前向声明
 QT_END_NAMESPACE
 
-class MainWindow : public QMainWindow
+class Guahao : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
+    Guahao(QWidget *parent = nullptr);
+    ~Guahao();
 
 private slots:
     void onDateChanged();
@@ -25,8 +25,8 @@ private:
     void populateComboBox();
     void disableSelectedOptions(const QDate &date);
 
-    Ui::MainWindow *ui;
+    Ui::Guahao *ui;
     QSqlDatabase db;
 };
 
-#endif // MAINWINDOW_H
+#endif // GUAHAO_H

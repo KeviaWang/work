@@ -1,13 +1,14 @@
-#include "mainwindow.h"
-#include "ui_mainwindow.h"
+#include "guahao.h"
+#include "ui_guahao.h"
 
 #include <QSqlError>
 #include <QMessageBox>
 #include <QDebug>
+#include <QSqlDatabase>
 
-MainWindow::MainWindow(QWidget *parent)
+Guahao::Guahao(QWidget *parent)
     : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+    , ui(new Ui::Guahao)
 {
     ui->setupUi(this);
 
@@ -21,24 +22,24 @@ MainWindow::MainWindow(QWidget *parent)
     }
 
     // 连接日期选择器的信号到槽函数
-    connect(ui->dateEdit, &QDateEdit::dateChanged, this, &MainWindow::onDateChanged);
+    connect(ui->dateEdit, &QDateEdit::dateChanged, this, &Guahao::onDateChanged);
     // 初始填充 ComboBox
     onDateChanged();  // 默认情况下加载当前日期的可用时间段
 }
 
-MainWindow::~MainWindow()
+Guahao::~Guahao()
 {
     delete ui;
 }
 
-void MainWindow::onDateChanged()
+void Guahao::onDateChanged()
 {
     QDate selectedDate = ui->dateEdit->date();
     populateComboBox();  // 先清空并重新填充 ComboBox
     disableSelectedOptions(selectedDate);
 }
 
-void MainWindow::populateComboBox()
+void Guahao::populateComboBox()
 {
     // 清空 ComboBox 的所有选项
     ui->comboBox->clear();
@@ -53,7 +54,7 @@ void MainWindow::populateComboBox()
     ui->comboBox->addItem("15:00~16:00");
 }
 
-void MainWindow::disableSelectedOptions(const QDate &date)
+void Guahao::disableSelectedOptions(const QDate &date)
 {
     QSqlQuery query(db);
     query.prepare("SELECT time_slot FROM TimeSlotSelection WHERE date = :date");
@@ -75,7 +76,7 @@ void MainWindow::disableSelectedOptions(const QDate &date)
     }
 }
 
-void MainWindow::on_pushButton_clicked()
+void Guahao::on_pushButton_clicked()
 {
     // 禁用按钮以防止重复点击
     ui->pushButton->setEnabled(false);

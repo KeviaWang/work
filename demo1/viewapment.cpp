@@ -118,13 +118,14 @@ void viewApMent::on_pushButton_2_clicked()
 
 void viewApMent::on_goutong_clicked()
 {
-    platform * plat = new platform;
+    platform * plat = new platform; //医生端沟通
     plat->show();
 }
 
 void viewApMent::on_chufangyizhu_clicked()
 {
-    handleApment * hand = new handleApment;
+    handleApment * hand = new handleApment; //开处方
+    hand->patient_name=ui->usernameEdit->text();
     hand->show();
 }
 

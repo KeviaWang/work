@@ -111,3 +111,9 @@ void per_information::recvdata()
 
                 }
 }
+
+void per_information::on_pushButton_clicked()
+{
+    this->close();
+    this->~per_information();
+}

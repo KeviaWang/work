@@ -91,10 +91,27 @@ void viewApMent::appendOneRow(int row,QString name,QString gender,QString birth,
 viewApMent::~viewApMent()
 {
     delete ui;
+    delete m_socket;
 }
 
 void viewApMent::on_pushButton_2_clicked()
 {
+    // 操作信号：0：医生端注册 1：患者端注册 2：医生端登录 3：患者端登录 4：医生端编辑个人信息 5：患者端编辑个人信息
+    //          6：查看挂号信息 7：编写病例 编写处方和缴费 8：查看病例、查看处方和缴费 9：查看医生信息
+    QString sign;
+    sign="6";
+    QString datastr = QString(R"([
+            {
+                "sign":"%1","username":"%2","ip":"%3","port":"%4"
+            }
+
+        ])").arg(sign).arg(MainUser).arg(my_ip.toString()).arg(my_port);
+
+    QJsonDocument jsondoc=QJsonDocument::fromJson(datastr.toUtf8());
+
+    //转换成QByterarray发送
+    QByteArray datagram=jsondoc.toJson();
+    m_socket->writeDatagram(datagram, sql_ip, sql_port);
 
     connect(m_socket, SIGNAL(readyRead()), this, SLOT(recvdata()));
 
@@ -102,13 +119,14 @@ void viewApMent::on_pushButton_2_clicked()
 
 void viewApMent::on_goutong_clicked()
 {
-    platform * plat = new platform;
+    platform * plat = new platform; //医生端沟通
     plat->show();
 }
 
 void viewApMent::on_chufangyizhu_clicked()
 {
-    handleApment * hand = new handleApment;
+    handleApment * hand = new handleApment; //开处方
+    hand->patient_name=ui->usernameEdit->text();
     hand->show();
 }
 

@@ -34,6 +34,8 @@ private slots:
     void on_pushButton_2_clicked();
     void recvdata();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::doc_edit *ui;
     QUdpSocket* m_socket;

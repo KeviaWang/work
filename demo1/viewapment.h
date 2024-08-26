@@ -36,6 +36,8 @@ private slots:
     void on_chufangyizhu_clicked();
     void read_data();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::viewApMent *ui;
     QUdpSocket* m_socket;

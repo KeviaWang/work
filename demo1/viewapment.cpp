@@ -43,6 +43,17 @@ viewApMent::viewApMent(QWidget *parent) :
     my_port=8888;
     sql_ip=QHostAddress("192.168.254.129");
     sql_port=8888;
+
+    //接受数据绑定
+    m_socket->bind(my_ip,my_port);
+    bool bindResult=connect(m_socket,SIGNAL(readyRead()),this,SLOT(read_data()));
+    if(!bindResult)
+    {
+        QMessageBox::warning(this, tr("Waring"),
+                              tr("binding error!"),
+                                 QMessageBox::Yes);
+        return; //退出
+    }
 }
 
 void viewApMent::appendOneRow(int row,QString name,QString gender,QString birth,QString height,QString weight,QString disease,QString family_history)
@@ -84,16 +95,6 @@ viewApMent::~viewApMent()
 
 void viewApMent::on_pushButton_2_clicked()
 {
-    //接受数据绑定
-    m_socket->bind(my_ip,my_port);
-    bool bindResult=connect(m_socket,SIGNAL(readyRead()),this,SLOT(read_data()));
-    if(!bindResult)
-    {
-        QMessageBox::warning(this, tr("Waring"),
-                              tr("binding error!"),
-                                 QMessageBox::Yes);
-        return; //退出
-    }
 
     connect(m_socket, SIGNAL(readyRead()), this, SLOT(recvdata()));
 
@@ -155,4 +156,10 @@ void viewApMent::read_data()
                }
             }
 
+}
+
+void viewApMent::on_pushButton_clicked()
+{
+    this->close();
+    this->~viewApMent();
 }

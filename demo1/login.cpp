@@ -32,6 +32,20 @@ login::login(QWidget *parent) :
     sql_ip=QHostAddress("192.168.254.129");
     sql_port=8888;
 
+    //接受数据绑定
+    bool bindResult = m_socket->bind(my_ip, my_port);
+    qDebug()<<bindResult;
+    if(!bindResult)
+    {
+        QMessageBox::warning(this, tr("Waring"),
+                              tr("binding self error!"),
+                                 QMessageBox::Yes);
+        return;
+    }
+
+
+    connect(m_socket, SIGNAL(readyRead()), this, SLOT(recvdata()));    //绑定接收
+
 
 }
 
@@ -45,25 +59,17 @@ login::~login()
 
 void login::on_signup_btn_clicked()
 {
+    qDebug()<<10;
     this->close();
     signup *s = new signup;
+    this->~login();
     s->show();
 }
 
 void login::on_logBtn_clicked()
 {
 
-    //接受数据绑定
-    bool bindResult = m_socket->bind(my_ip, my_port);
-    if(!bindResult)
-    {
-        QMessageBox::warning(this, tr("Waring"),
-                              tr("binding self error!"),
-                                 QMessageBox::Yes);
-        return;
-    }
 
-    connect(m_socket, SIGNAL(readyRead()), this, SLOT(recvdata()));    //绑定接收
 
     QString username =ui->userLineEdit->text().trimmed();
     QString password =ui->passLineEdit->text();
@@ -111,6 +117,7 @@ void login::read_data()
                 MainUser=ui->userLineEdit->text();
                 this->close();
                 docMain docM;
+                this->~login(); //每次跳转都析构当前界面
                 docM.show();
 
                 }
@@ -120,6 +127,7 @@ void login::read_data()
                 MainUser=ui->userLineEdit->text();
                 this->close();
                 MainWindow *w = new MainWindow;
+                this->~login();
                 w->show();
                 }
 

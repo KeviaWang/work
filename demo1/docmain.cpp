@@ -16,13 +16,15 @@ docMain::~docMain()
 
 void docMain::on_gerenxinxi_clicked()
 {
-    doc_edit * edit = new doc_edit;
+    doc_edit * edit = new doc_edit; 
     edit->show();
+
 }
 
 void docMain::on_bingqingchuli_clicked()
 {
     viewApMent *view = new viewApMent;
     view->show();
+
 }
 

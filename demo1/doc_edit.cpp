@@ -20,16 +20,7 @@ doc_edit::doc_edit(QWidget *parent) :
     my_port=8888;
     sql_ip=QHostAddress("192.168.254.129");
     sql_port=8888;
-}
 
-doc_edit::~doc_edit()
-{
-    delete ui;
-    delete m_socket;
-}
-
-void doc_edit::on_pushButton_2_clicked()
-{
     // 接收数据时，需要将SOCKET与接收端口绑定在一起
     bool bindResult = m_socket->bind(my_ip, my_port);
     if(!bindResult)
@@ -40,6 +31,17 @@ void doc_edit::on_pushButton_2_clicked()
         return;
     }
     connect(m_socket, SIGNAL(readyRead()), this, SLOT(recvdata()));    //绑定接收
+}
+
+doc_edit::~doc_edit()
+{
+    delete ui;
+    delete m_socket;
+}
+
+void doc_edit::on_pushButton_2_clicked()
+{
+
 
     QString name =ui->nameEdit->text().trimmed();
     QString gender =ui->genderEdit->text().trimmed();
@@ -99,4 +101,10 @@ void doc_edit::recvdata()
                 }
 
             }
+}
+
+void doc_edit::on_pushButton_clicked()
+{
+    this->close();
+    this->~doc_edit();
 }

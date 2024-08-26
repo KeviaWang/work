@@ -18,6 +18,17 @@ per_information::per_information(QWidget *parent) :
     my_port=8888;
     sql_ip=QHostAddress("192.168.254.129");
     sql_port=8888;
+
+    // 接收数据时，需要将SOCKET与接收端口绑定在一起
+        bool bindResult = m_socket->bind(my_ip, my_port);
+        if(!bindResult)
+        {
+            QMessageBox::warning(this, tr("Waring"),
+                                  tr("binding self error!"),
+                                     QMessageBox::Yes);
+            return;
+        }
+        connect(m_socket, SIGNAL(readyRead()), this, SLOT(recvdata()));    //绑定接收
 }
 
 per_information::~per_information()
@@ -28,16 +39,7 @@ per_information::~per_information()
 
 void per_information::on_pushButton_2_clicked()
 {
-    // 接收数据时，需要将SOCKET与接收端口绑定在一起
-    bool bindResult = m_socket->bind(my_ip, my_port);
-    if(!bindResult)
-    {
-        QMessageBox::warning(this, tr("Waring"),
-                              tr("binding self error!"),
-                                 QMessageBox::Yes);
-        return;
-    }
-    connect(m_socket, SIGNAL(readyRead()), this, SLOT(recvdata()));    //绑定接收
+
 
     QString name = ui->lineEdit->text().trimmed();
     QString gender = ui->lineEdit_2->text().trimmed();

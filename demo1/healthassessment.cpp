@@ -96,3 +96,9 @@ void healthassessment::on_pushButton_clicked()
 
 
 }
+
+void healthassessment::on_pushButton_2_clicked()
+{
+    this->close();
+    this->~healthassessment();
+}

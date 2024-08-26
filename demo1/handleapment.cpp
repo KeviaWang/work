@@ -12,3 +12,13 @@ handleApment::~handleApment()
 {
     delete ui;
 }
+
+void handleApment::on_tijiaoBtn_clicked()
+{
+    QString bingli = ui->bingliEdit->text();
+    QString chufang = ui->chufangEdit->text();
+    QString yizhu = ui->yizhuEdit->text();
+    QString jiaofei = ui->jiaofeiEdit->text();
+
+
+}

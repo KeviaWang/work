@@ -2,7 +2,6 @@
 #define HANDLEAPMENT_H
 
 #include <QWidget>
-#include <QNetworkInterface>
 
 namespace Ui {
 class handleApment;
@@ -16,6 +15,9 @@ public:
     explicit handleApment(QWidget *parent = nullptr);
     ~handleApment();
     QString patient_name;
+
+private slots:
+    void on_tijiaoBtn_clicked();
 
 private:
     Ui::handleApment *ui;

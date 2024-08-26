@@ -51,15 +51,14 @@ void handleApment::on_tijiaoBtn_clicked()
     QString datastr = QString(R"([
             {
                 "sign":"%1",
-                "username":"%2",
-                "docname": "%3",
+                "name":"%2",
+                "username": "%3",
                 "bingli": "%4",
                 "chufang": "%5",
                 "yizhu":"%6",
-                "position":"%7",
-                "jiaofei":"%8",
-                "ip":"%9",
-                "port":"%10"
+                "jiaofei":"%7",
+                "ip":"%8",
+                "port":"%9"
             },
 
         ])").arg(7).arg(patient_name).arg(MainUser).arg(bingli).arg(chufang).arg(yizhu).arg(jiaofei).arg(my_ip.toString()).arg(my_port);

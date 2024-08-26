@@ -30,7 +30,7 @@ doc_edit::doc_edit(QWidget *parent) :
                                  QMessageBox::Yes);
         return;
     }
-    connect(m_socket, SIGNAL(readyRead()), this, SLOT(recvdata()));    //绑定接收
+    connect(m_socket, SIGNAL(readyRead()), this, SLOT(read_data()));    //绑定接收
 }
 
 doc_edit::~doc_edit()
@@ -78,7 +78,7 @@ void doc_edit::on_pushButton_2_clicked()
 
 }
 
-void doc_edit::recvdata()
+void doc_edit::read_data()
 {
     //读取udp socket的数据缓冲区，接收数据
             while(m_socket->hasPendingDatagrams())

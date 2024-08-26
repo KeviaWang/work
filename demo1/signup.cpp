@@ -27,7 +27,7 @@ signup::signup(QWidget *parent) :
     sql_ip=QHostAddress("192.168.254.129");
     sql_port=8888;
 
-    qDebug()<<20;
+
     //接受数据绑定
     bool bindResult = m_socket->bind(my_ip, my_port);
     qDebug()<<bindResult;
@@ -39,12 +39,12 @@ signup::signup(QWidget *parent) :
          qDebug() << "Bind failed: " << m_socket->errorString();
         return;
     }
-    connect(m_socket, SIGNAL(readyRead()), this, SLOT(recvdata()));    //绑定接收
+    connect(m_socket, SIGNAL(readyRead()), this, SLOT(read_data()));    //绑定接收
 }
 
 signup::~signup()
 {
-    qDebug()<<30;
+
     delete ui;
     delete  m_socket;
 }

@@ -3,6 +3,16 @@
 
 #include <QWidget>
 #include <QNetworkInterface>
+#include<QUdpSocket>
+#include<QMessageBox>
+#include <QHostInfo>
+#include<QHostAddress>
+#include<QDataStream>
+#include <QJsonDocument>
+#include <QJsonArray>
+#include <QJsonObject>
+#include <QJsonValue>
+#include "login.h"
 
 namespace Ui {
 class doc_information;
@@ -22,9 +32,16 @@ private slots:
 void on_pushButton_3_clicked();
 
 void on_pushButton_2_clicked();
+void read_data();
+
 
 private:
     Ui::doc_information *ui;
+    QUdpSocket* m_socket;
+    QHostAddress sql_ip;
+    int sql_port;
+    QHostAddress my_ip;
+    int my_port;
 };
 
 #endif // DOC_INFORMATION_H

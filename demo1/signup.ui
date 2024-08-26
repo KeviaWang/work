@@ -157,6 +157,32 @@ background:transparent</string>
      <string>请输入你的用户名</string>
     </property>
    </widget>
+   <widget class="QRadioButton" name="patient_btn">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>200</y>
+      <width>112</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>患者</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="doc_btn">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>240</y>
+      <width>112</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>医生</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>

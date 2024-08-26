@@ -116,7 +116,7 @@ void disease::on_pushButton_2_clicked()
     QByteArray datagram=jsondoc.toJson();
     m_socket->writeDatagram(datagram, sql_ip, sql_port);
 
-    connect(m_socket, SIGNAL(readyRead()), this, SLOT(recvdata()));
+    connect(m_socket, SIGNAL(readyRead()), this, SLOT(read_data()));
 
 }
 

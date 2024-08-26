@@ -44,7 +44,7 @@ login::login(QWidget *parent) :
     }
 
 
-    connect(m_socket, SIGNAL(readyRead()), this, SLOT(recvdata()));    //绑定接收
+    connect(m_socket, SIGNAL(readyRead()), this, SLOT(read_data()));    //绑定接收
 
 
 }
@@ -59,7 +59,7 @@ login::~login()
 
 void login::on_signup_btn_clicked()
 {
-    qDebug()<<10;
+    qDebug()<<"登录按键触发";
     this->close();
     signup *s = new signup;
     this->~login();
@@ -74,7 +74,7 @@ void login::on_logBtn_clicked()
     QString username =ui->userLineEdit->text().trimmed();
     QString password =ui->passLineEdit->text();
     // 操作信号：0：医生端注册 1：患者端注册 2：医生端登录 3：患者端登录 4：医生端编辑个人信息 5：患者端编辑个人信息
-    //          6：查看挂号信息 7：编写病例 编写处方和缴费 8：查看病例、查看处方和缴费 9：查看医生信息
+    //          6：查看挂号信息 7：编写病例 编写处方和缴费 8：查看病例、查看处方和缴费 9：查看医生信息 10：进行挂号
     QString sign;
     if(ui->doctorButton->isChecked())
     sign="2";

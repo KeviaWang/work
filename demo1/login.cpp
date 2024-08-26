@@ -110,11 +110,11 @@ void login::read_data()
             QString sign = datagram.data();
             if(sign=="1")
             {
-                QString MainUser=ui->userLineEdit->text().trimmed();
+
                 if(ui->doctorButton->isChecked())
                 {
                 QMessageBox::information(NULL,"信息","登录成功");
-                MainUser=ui->userLineEdit->text();
+                MainUser=ui->userLineEdit->text().trimmed();
                 this->close();
                 docMain docM;
                 this->~login(); //每次跳转都析构当前界面

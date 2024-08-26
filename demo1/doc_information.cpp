@@ -1,6 +1,7 @@
 #include "doc_information.h"
 #include "ui_doc_information.h"
 
+
 doc_information::doc_information(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::doc_information)
@@ -92,6 +93,10 @@ void doc_information::appendOneRow(int row,QString name,QString gender,QString r
 void doc_information::on_pushButton_3_clicked()
 {
     QString doc_name = ui->lineEdit->text();//将医生姓名和user姓名送到预约表
+    Guahao *guahao=new Guahao;
+    guahao->doctor_name=doc_name;
+    guahao->show();
+
 }
 
 void doc_information::on_pushButton_2_clicked()

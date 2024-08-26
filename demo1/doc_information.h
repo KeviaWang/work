@@ -1,5 +1,6 @@
 #ifndef DOC_INFORMATION_H
 #define DOC_INFORMATION_H
+#include "guahao.h"
 
 #include <QWidget>
 #include <QNetworkInterface>

@@ -110,6 +110,8 @@ void viewApMent::on_goutong_clicked()
 void viewApMent::on_chufangyizhu_clicked()
 {
     handleApment * hand = new handleApment;
+    hand->patient_name=ui->usernameEdit->text();
+    qDebug()<<"patient name"<<hand->patient_name;
     hand->show();
 }
 

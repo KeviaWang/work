@@ -131,11 +131,13 @@ void Guahao::read_data()
         if(str=="1")
         {
             QMessageBox::information(this, "成功", "预约成功！");
+            this->close();
+            this->~Guahao();
             return ;
         }
         else
         {
-            QMessageBox::critical(this, "错误", "插入失败");
+            QMessageBox::critical(this, "错误", "预约失败");
              ui->pushButton->setEnabled(true);  // 重新启用按钮
             return;
         }

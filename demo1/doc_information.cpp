@@ -58,7 +58,7 @@ doc_information::~doc_information()
     delete ui;
     delete m_socket;
 }
-void doc_information::appendOneRow(QString name,QString gender,QString room,QString contact,QString positon,QString major,QString year)
+void doc_information::appendOneRow(int row,QString name,QString gender,QString room,QString contact,QString positon,QString major,QString year)
 {
 
 
@@ -80,13 +80,13 @@ void doc_information::appendOneRow(QString name,QString gender,QString room,QStr
 
 
 
-   ui->tableWidget->setItem(0,0,nameItem);
-   ui->tableWidget->setItem(0,1,genderItem);
-   ui->tableWidget->setItem(0,2,roomItem);
-   ui->tableWidget->setItem(0,3,contactItem);
-   ui->tableWidget->setItem(0,4,posionItem);
-   ui->tableWidget->setItem(0,5,majorItem);
-   ui->tableWidget->setItem(0,6,yearItem);
+   ui->tableWidget->setItem(row,0,nameItem);
+   ui->tableWidget->setItem(row,1,genderItem);
+   ui->tableWidget->setItem(row,2,roomItem);
+   ui->tableWidget->setItem(row,3,contactItem);
+   ui->tableWidget->setItem(row,4,posionItem);
+   ui->tableWidget->setItem(row,5,majorItem);
+   ui->tableWidget->setItem(row,6,yearItem);
 }
 
 void doc_information::on_pushButton_3_clicked()
@@ -114,12 +114,52 @@ void doc_information::on_pushButton_2_clicked()
     //转换成QByterarray发送
     QByteArray datagram=jsondoc.toJson();
     m_socket->writeDatagram(datagram, sql_ip, sql_port);
-
+    //绑定发送信号槽
     connect(m_socket, SIGNAL(readyRead()), this, SLOT(read_data()));
-    appendOneRow("mina","hot","a","s","d","r","f");
+
 }
 
 void doc_information::read_data()
 {
+    //接受数据库传来的信息
+        QString name="aaa";
+        QString gender="b";
+        QString room="c";
+        QString contact="d";
+        QString posion="e";
+        QString major="f";
+        QString year="g";
+    //读取udp socket的数据缓冲区，接收数据
+        while(m_socket->hasPendingDatagrams())
+        {
+            QByteArray datagram;
+            datagram.resize(m_socket->pendingDatagramSize());
+
+        //读取缓冲区数据并显示
+            m_socket->readDatagram(datagram.data(), datagram.size());
+
+            QJsonDocument jsonDoc = QJsonDocument::fromJson(datagram);
+            QJsonArray  datagram_array=jsonDoc.array();
+            int size = datagram_array.size();
+
+            for (int i = 0; i < size; ++i)
+            {
+                QJsonObject jsonObject = datagram_array[i].toObject();
+                // 处理jsonObject
+                // 例如，打印出所有键值对
+                /*for (QString key : jsonObject.keys()) {
+                    qDebug() << key << ": " << jsonObject.value(key).toString();*/
+                 name=jsonObject["name"].toString();
+                 gender=jsonObject["gender"].toString();
+                 room=jsonObject["room"].toString();
+                 contact=jsonObject["contact"].toString();
+                 posion=jsonObject["posion"].toString();
+                 major=jsonObject["major"].toString();
+                 year=jsonObject["year"].toString();
+
+                 appendOneRow(i,name,gender,room,contact,posion,major,year);
+
+               }
+            }
 
 }

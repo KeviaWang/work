@@ -148,11 +148,9 @@ void disease::read_data()
 
             QJsonDocument jsonDoc = QJsonDocument::fromJson(datagram);
             QJsonArray  datagram_array=jsonDoc.array();
-            int size = datagram_array.size();
 
-            for (int i = 0; i < size; ++i)
             {
-                QJsonObject jsonObject = datagram_array[i].toObject();
+                QJsonObject jsonObject = datagram_array[0].toObject();
                 // 处理jsonObject
                 // 例如，打印出所有键值对
                 /*for (QString key : jsonObject.keys()) {

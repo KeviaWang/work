@@ -6,24 +6,30 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
-    <height>500</height>
+    <width>588</width>
+    <height>560</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(255, 255, 255);</string>
+   <string notr="true">#healthassessment{border-image: url(:/picture/蓝色渐变.jpg);}
+</string>
   </property>
   <widget class="QLineEdit" name="lineEdit">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>20</y>
-     <width>200</width>
-     <height>25</height>
+     <x>12</x>
+     <y>167</y>
+     <width>201</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lineEdit{border-radius:5px;}
+#lineEdit{background-color: rgb(255, 255, 255);}
+</string>
    </property>
    <property name="placeholderText">
     <string>请输入你的身高/m</string>
@@ -32,11 +38,16 @@
   <widget class="QLineEdit" name="lineEdit_2">
    <property name="geometry">
     <rect>
-     <x>250</x>
-     <y>20</y>
-     <width>200</width>
-     <height>25</height>
+     <x>242</x>
+     <y>167</y>
+     <width>201</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lineEdit_2{border-radius:5px;}
+#lineEdit_2{background-color: rgb(255, 255, 255);}
+</string>
    </property>
    <property name="placeholderText">
     <string>请输入你的体重/kg</string>
@@ -45,11 +56,16 @@
   <widget class="QLineEdit" name="lineEdit_3">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>70</y>
-     <width>200</width>
-     <height>25</height>
+     <x>12</x>
+     <y>231</y>
+     <width>201</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lineEdit_3{border-radius:5px;}
+#lineEdit_3{background-color: rgb(255, 255, 255);}
+</string>
    </property>
    <property name="placeholderText">
     <string>请输入你的收缩压/mmHg</string>
@@ -58,11 +74,16 @@
   <widget class="QLineEdit" name="lineEdit_4">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>120</y>
-     <width>200</width>
-     <height>25</height>
+     <x>12</x>
+     <y>298</y>
+     <width>201</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lineEdit_4{border-radius:5px;}
+#lineEdit_4{background-color: rgb(255, 255, 255);}
+</string>
    </property>
    <property name="placeholderText">
     <string>请输入你的TC值(mmol/L)</string>
@@ -71,11 +92,16 @@
   <widget class="QLineEdit" name="lineEdit_5">
    <property name="geometry">
     <rect>
-     <x>250</x>
-     <y>120</y>
-     <width>200</width>
-     <height>25</height>
+     <x>241</x>
+     <y>298</y>
+     <width>201</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lineEdit_5{border-radius:5px;}
+#lineEdit_5{background-color: rgb(255, 255, 255);}
+</string>
    </property>
    <property name="placeholderText">
     <string>请输入你的空腹血糖(mg/dl)</string>
@@ -84,11 +110,16 @@
   <widget class="QLineEdit" name="lineEdit_6">
    <property name="geometry">
     <rect>
-     <x>250</x>
-     <y>70</y>
-     <width>200</width>
-     <height>25</height>
+     <x>241</x>
+     <y>230</y>
+     <width>201</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lineEdit_6{border-radius:5px;}
+#lineEdit_6{background-color: rgb(255, 255, 255);}
+</string>
    </property>
    <property name="placeholderText">
     <string>请输入你的舒张压/mmHg</string>
@@ -98,10 +129,15 @@
    <property name="geometry">
     <rect>
      <x>470</x>
-     <y>120</y>
-     <width>89</width>
-     <height>25</height>
+     <y>380</y>
+     <width>91</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#pushButton{border-radius:10px;}
+#pushButton{background-color: rgb(255, 255, 255);}
+</string>
    </property>
    <property name="text">
     <string>提交</string>
@@ -110,11 +146,16 @@
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
-     <x>470</x>
-     <y>360</y>
-     <width>89</width>
-     <height>25</height>
+     <x>471</x>
+     <y>447</y>
+     <width>91</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#pushButton_2{border-radius:10px;}
+#pushButton_2{background-color: rgb(255, 255, 255);}
+</string>
    </property>
    <property name="text">
     <string>返回</string>
@@ -123,14 +164,60 @@
   <widget class="QTableWidget" name="tableWidget">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>160</y>
+     <x>12</x>
+     <y>374</y>
      <width>431</width>
-     <height>81</height>
+     <height>151</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#tableWidget{border-radius:5px;}
+#tableWidget{background-color: rgb(255, 255, 255);}
+</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>40</y>
+     <width>141</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <italic>false</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>健康评估</string>
+   </property>
+   <property name="textFormat">
+    <enum>Qt::AutoText</enum>
    </property>
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>healthassessment</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>344</x>
+     <y>472</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>299</x>
+     <y>249</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

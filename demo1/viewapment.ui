@@ -13,17 +13,25 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">#viewApMent{border-image: url(:/picture/蓝色渐变.jpg);}</string>
+  </property>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>510</x>
+     <x>489</x>
      <y>430</y>
-     <width>89</width>
-     <height>25</height>
+     <width>91</width>
+     <height>31</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">#pushButton{border-radius:10px;}
+#pushButton{background-color: rgb(255, 255, 255);}
+</string>
+   </property>
    <property name="text">
-    <string>quit</string>
+    <string>返回</string>
    </property>
   </widget>
   <widget class="QTableWidget" name="tableWidget">
@@ -32,73 +40,26 @@
      <x>0</x>
      <y>0</y>
      <width>471</width>
-     <height>281</height>
+     <height>431</height>
     </rect>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
-     <x>510</x>
-     <y>50</y>
-     <width>89</width>
-     <height>25</height>
+     <x>488</x>
+     <y>380</y>
+     <width>91</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#pushButton_2{border-radius:10px;}
+#pushButton_2{background-color: rgb(255, 255, 255);}
+</string>
    </property>
    <property name="text">
     <string>显示</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="usernameEdit">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>350</y>
-     <width>241</width>
-     <height>25</height>
-    </rect>
-   </property>
-   <property name="placeholderText">
-    <string>请输入你想要沟通的患者的用户名</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="username">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>330</y>
-     <width>91</width>
-     <height>17</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>username</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="goutong">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>390</y>
-     <width>89</width>
-     <height>25</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>医患沟通</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="chufangyizhu">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>430</y>
-     <width>89</width>
-     <height>25</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>处方医嘱等</string>
    </property>
   </widget>
  </widget>

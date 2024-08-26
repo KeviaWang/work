@@ -6,164 +6,157 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
-    <height>500</height>
+    <width>1042</width>
+    <height>592</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QPushButton" name="pushButton">
+  <property name="styleSheet">
+   <string notr="true">#signup{border-image: url(:/picture/login.png);}</string>
+  </property>
+  <widget class="QFrame" name="frame">
    <property name="geometry">
     <rect>
-     <x>220</x>
-     <y>400</y>
-     <width>89</width>
-     <height>25</height>
+     <x>10</x>
+     <y>60</y>
+     <width>521</width>
+     <height>391</height>
     </rect>
    </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(29, 123, 255);
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>0</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 87 20pt &quot;Arial Black&quot;;
+background:transparent</string>
+    </property>
+    <property name="text">
+     <string>用户名</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>73</x>
+      <y>306</y>
+      <width>89</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(29, 123, 255);
 color: rgb(255, 255, 255);
 font: 25 9pt &quot;Bahnschrift Light&quot;;</string>
-   </property>
-   <property name="text">
-    <string>完成</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>220</x>
-     <y>170</y>
-     <width>81</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font: 87 20pt &quot;Arial Black&quot;;
-background:transparent</string>
-   </property>
-   <property name="text">
-    <string>密码</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_3">
-   <property name="geometry">
-    <rect>
-     <x>220</x>
-     <y>230</y>
-     <width>111</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font: 87 20pt &quot;Arial Black&quot;;
-background:transparent</string>
-   </property>
-   <property name="text">
-    <string>确定密码</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="username">
-   <property name="geometry">
-    <rect>
-     <x>220</x>
-     <y>145</y>
-     <width>141</width>
-     <height>25</height>
-    </rect>
-   </property>
-   <property name="placeholderText">
-    <string>请输入你的用户名</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="password">
-   <property name="geometry">
-    <rect>
-     <x>220</x>
-     <y>205</y>
-     <width>141</width>
-     <height>25</height>
-    </rect>
-   </property>
-   <property name="placeholderText">
-    <string>请输入你的密码</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_2">
-   <property name="geometry">
-    <rect>
-     <x>220</x>
-     <y>360</y>
-     <width>89</width>
-     <height>25</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(29, 123, 255);
+    </property>
+    <property name="text">
+     <string>完成</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>74</x>
+      <y>257</y>
+      <width>89</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(29, 123, 255);
 color: rgb(255, 255, 255);
 font: 25 9pt &quot;Bahnschrift Light&quot;;</string>
-   </property>
-   <property name="text">
-    <string>确定</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="confirmword">
-   <property name="geometry">
-    <rect>
-     <x>220</x>
-     <y>265</y>
-     <width>141</width>
-     <height>25</height>
-    </rect>
-   </property>
-   <property name="placeholderText">
-    <string>请输入你的密码</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>220</x>
-     <y>110</y>
-     <width>91</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font: 87 20pt &quot;Arial Black&quot;;
+    </property>
+    <property name="text">
+     <string>确定</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="password">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>113</y>
+      <width>201</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="placeholderText">
+     <string>请输入你的密码</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="confirmword">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>195</y>
+      <width>201</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="placeholderText">
+     <string>请输入你的密码</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>157</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 87 20pt &quot;Arial Black&quot;;
 background:transparent</string>
-   </property>
-   <property name="text">
-    <string>用户名</string>
-   </property>
-  </widget>
-  <widget class="QRadioButton" name="doc_btn">
-   <property name="geometry">
-    <rect>
-     <x>400</x>
-     <y>280</y>
-     <width>112</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>医生</string>
-   </property>
-  </widget>
-  <widget class="QRadioButton" name="patient_btn">
-   <property name="geometry">
-    <rect>
-     <x>400</x>
-     <y>310</y>
-     <width>112</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>患者</string>
-   </property>
+    </property>
+    <property name="text">
+     <string>确定密码</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>78</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 87 20pt &quot;Arial Black&quot;;
+background:transparent</string>
+    </property>
+    <property name="text">
+     <string>密码</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="username">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>38</y>
+      <width>201</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="placeholderText">
+     <string>请输入你的用户名</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>

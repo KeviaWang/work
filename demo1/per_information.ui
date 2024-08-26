@@ -6,21 +6,29 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>774</width>
+    <height>586</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">#per_information{border-image: url(:/picture/蓝色渐变.jpg);}</string>
+  </property>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
      <x>600</x>
-     <y>470</y>
-     <width>89</width>
-     <height>25</height>
+     <y>510</y>
+     <width>101</width>
+     <height>41</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#pushButton{border-radius:10px;}
+#pushButton{background-color: rgb(255, 255, 255);}
+</string>
    </property>
    <property name="text">
     <string>quit</string>
@@ -30,10 +38,15 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>180</y>
-     <width>500</width>
-     <height>25</height>
+     <y>143</y>
+     <width>131</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lineEdit_5{border-radius:5px;}
+#lineEdit_5{background-color: rgb(255, 255, 255);}
+</string>
    </property>
    <property name="placeholderText">
     <string>请输入你的体重</string>
@@ -44,9 +57,14 @@
     <rect>
      <x>10</x>
      <y>20</y>
-     <width>500</width>
-     <height>25</height>
+     <width>131</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lineEdit{border-radius:5px;}
+#lineEdit{background-color: rgb(255, 255, 255);}
+</string>
    </property>
    <property name="placeholderText">
     <string>请输入你的姓名</string>
@@ -56,10 +74,15 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>500</y>
-     <width>500</width>
-     <height>25</height>
+     <y>503</y>
+     <width>501</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lineEdit_13{border-radius:5px;}
+#lineEdit_13{background-color: rgb(255, 255, 255);}
+</string>
    </property>
    <property name="placeholderText">
     <string>请输入你的紧急联系人</string>
@@ -69,10 +92,18 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>300</y>
-     <width>500</width>
-     <height>25</height>
+     <y>303</y>
+     <width>231</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lineEdit_8{border-radius:5px;}
+#lineEdit_8{background-color: rgb(255, 255, 255);}
+</string>
+   </property>
+   <property name="text">
+    <string/>
    </property>
    <property name="placeholderText">
     <string>请输入你的身份证号</string>
@@ -82,10 +113,15 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>460</y>
-     <width>500</width>
-     <height>25</height>
+     <y>463</y>
+     <width>501</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lineEdit_12{border-radius:5px;}
+#lineEdit_12{background-color: rgb(255, 255, 255);}
+</string>
    </property>
    <property name="placeholderText">
     <string>请输入你的保险信息</string>
@@ -95,10 +131,15 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>60</y>
-     <width>500</width>
-     <height>25</height>
+     <y>63</y>
+     <width>131</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lineEdit_2{border-radius:5px;}
+#lineEdit_2{background-color: rgb(255, 255, 255);}
+</string>
    </property>
    <property name="placeholderText">
     <string>请输入你的性别</string>
@@ -108,10 +149,18 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>220</y>
-     <width>500</width>
-     <height>25</height>
+     <y>223</y>
+     <width>231</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lineEdit_6{border-radius:5px;}
+#lineEdit_6{background-color: rgb(255, 255, 255);}
+</string>
+   </property>
+   <property name="text">
+    <string/>
    </property>
    <property name="placeholderText">
     <string>请输入你的联系方式</string>
@@ -122,9 +171,14 @@
     <rect>
      <x>600</x>
      <y>440</y>
-     <width>89</width>
-     <height>25</height>
+     <width>101</width>
+     <height>41</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#pushButton_2{border-radius:10px;}
+#pushButton_2{background-color: rgb(255, 255, 255);}
+</string>
    </property>
    <property name="text">
     <string>确定</string>
@@ -134,10 +188,15 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>340</y>
-     <width>500</width>
-     <height>25</height>
+     <y>343</y>
+     <width>501</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lineEdit_9{border-radius:5px;}
+#lineEdit_9{background-color: rgb(255, 255, 255);}
+</string>
    </property>
    <property name="placeholderText">
     <string>请输入你的病史</string>
@@ -147,23 +206,33 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>100</y>
-     <width>500</width>
-     <height>25</height>
+     <y>183</y>
+     <width>231</width>
+     <height>31</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">#lineEdit_3{border-radius:5px;}
+#lineEdit_3{background-color: rgb(255, 255, 255);}
+</string>
+   </property>
    <property name="placeholderText">
-    <string>请输入你的出生日期</string>
+    <string>请输入你的出生日期(20xx-xx-xx)</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_10">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>380</y>
-     <width>500</width>
-     <height>25</height>
+     <y>383</y>
+     <width>501</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lineEdit_10{border-radius:5px;}
+#lineEdit_10{background-color: rgb(255, 255, 255);}
+</string>
    </property>
    <property name="placeholderText">
     <string>请输入你的家族史</string>
@@ -173,10 +242,15 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>260</y>
-     <width>500</width>
-     <height>25</height>
+     <y>263</y>
+     <width>231</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lineEdit_7{border-radius:5px;}
+#lineEdit_7{background-color: rgb(255, 255, 255);}
+</string>
    </property>
    <property name="placeholderText">
     <string>请输入你的家庭住址</string>
@@ -186,10 +260,15 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>420</y>
-     <width>500</width>
-     <height>25</height>
+     <y>423</y>
+     <width>501</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lineEdit_11{border-radius:5px;}
+#lineEdit_11{background-color: rgb(255, 255, 255);}
+</string>
    </property>
    <property name="placeholderText">
     <string>请输入你的药物使用情况</string>
@@ -199,13 +278,31 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>140</y>
-     <width>500</width>
-     <height>25</height>
+     <y>103</y>
+     <width>131</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lineEdit_4{border-radius:5px;}
+#lineEdit_4{background-color: rgb(255, 255, 255);}
+</string>
    </property>
    <property name="placeholderText">
     <string>请输入你的身高</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>535</x>
+     <y>-14</y>
+     <width>241</width>
+     <height>271</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/picture/yyyssss.jpg&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
  </widget>

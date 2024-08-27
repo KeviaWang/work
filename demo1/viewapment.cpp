@@ -40,8 +40,8 @@ viewApMent::viewApMent(QWidget *parent) :
     }
 
     qDebug()<<"my ip "<<my_ip<<endl;
-    my_port=8888;
-    sql_ip=QHostAddress("192.168.254.129");
+    my_port=8895;
+    sql_ip=QHostAddress("192.168.149.23");
     sql_port=8888;
 
     //接受数据绑定
@@ -97,6 +97,24 @@ viewApMent::~viewApMent()
 void viewApMent::on_pushButton_2_clicked()
 {
 
+    // 操作信号：0：医生端注册 1：患者端注册 2：医生端登录 3：患者端登录 4：医生端编辑个人信息 5：患者端编辑个人信息
+    //          6：查看挂号信息 7：编写病例 编写处方和缴费 8：查看病例、查看处方和缴费 9：查看医生信息 10：进行挂号
+    //发送信息，要求数据库传送过来表中所需的数据
+    QString sign;
+    sign="6";
+    QString datastr = QString(R"([
+            {
+                "sign":"%1","username":"%2","ip":"%3","port":"%4"
+            }
+
+        ])").arg(sign).arg(MainUser).arg(my_ip.toString()).arg(my_port);
+
+    QJsonDocument jsondoc=QJsonDocument::fromJson(datastr.toUtf8());
+
+    //转换成QByterarray发送
+    QByteArray datagram=jsondoc.toJson();
+    m_socket->writeDatagram(datagram, sql_ip, sql_port);
+    qDebug()<<"发送挂号信息";
     connect(m_socket, SIGNAL(readyRead()), this, SLOT(read_data()));
 
 }
@@ -117,7 +135,7 @@ void viewApMent::on_chufangyizhu_clicked()
 
 void viewApMent::read_data()
 {
-
+    qDebug()<<"接收挂号信息";
     //接受数据库传来的信息
         QString name="aaa";
         QString gender="b";
@@ -138,7 +156,7 @@ void viewApMent::read_data()
             QJsonDocument jsonDoc = QJsonDocument::fromJson(datagram);
             QJsonArray  datagram_array=jsonDoc.array();
             int size = datagram_array.size();
-
+            qDebug()<<"挂号人数"<<size;
             for (int i = 0; i < size; ++i)
             {
                 QJsonObject jsonObject = datagram_array[i].toObject();

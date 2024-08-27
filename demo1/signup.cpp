@@ -23,8 +23,8 @@ signup::signup(QWidget *parent) :
     }
 
     qDebug()<<"my ip "<<my_ip<<endl;
-    my_port=9999;
-    sql_ip=QHostAddress("192.168.254.129");
+    my_port=8894;
+    sql_ip=QHostAddress("192.168.149.23");
     sql_port=8888;
 
 
@@ -99,6 +99,7 @@ void signup::on_pushButton_clicked()
 
 void signup::read_data()
 {
+    qDebug()<<"接收注册信息";
     //读取udp socket的数据缓冲区，接收数据
     while(m_socket->hasPendingDatagrams())
     {
@@ -108,6 +109,7 @@ void signup::read_data()
     //读取缓冲区数据并显示
         m_socket->readDatagram(datagram.data(), datagram.size());
         QString str = datagram.data();
+        qDebug()<<str;
         if(str=="1")
         {
             QMessageBox::information(NULL,"信息","注册成功");

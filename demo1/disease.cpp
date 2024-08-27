@@ -10,14 +10,13 @@ disease::disease(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    ui->tableWidget->setColumnCount(7);   //修改列数
+    ui->tableWidget->setColumnCount(6);   //修改列数
     ui->tableWidget->setRowCount(1);
 
     QStringList hlist;
     hlist << "name";
     hlist << "disease";
     hlist << "doctor";
-    hlist << "symptom";
     hlist << "prescription";
     hlist << "money";
     hlist << "advice";
@@ -29,7 +28,7 @@ disease::disease(QWidget *parent) :
 
     ui->tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
-    ui->tableWidget->setColumnWidth(6,300);
+    ui->tableWidget->setColumnWidth(5,300);
 
     m_socket=new QUdpSocket(this);
     //获得本机ip
@@ -42,8 +41,8 @@ disease::disease(QWidget *parent) :
     }
 
     qDebug()<<"my ip "<<my_ip<<endl;
-    my_port=8888;
-    sql_ip=QHostAddress("192.168.254.129");
+    my_port=9000;
+    sql_ip=QHostAddress("192.168.149.23");
     sql_port=8888;
 
     //接受数据绑定
@@ -64,14 +63,13 @@ disease::~disease()
     delete m_socket;
 }
 
-void disease::appendOneRow(QString name,QString dise,QString doctor,QString symptom,QString prescription,QString money,QString advice)
+void disease::appendOneRow(QString name,QString dise,QString doctor,QString prescription,QString money,QString advice)
 {
 
 
    QTableWidgetItem * nameItem=new QTableWidgetItem(name);
    QTableWidgetItem * diseItem=new QTableWidgetItem(dise);
    QTableWidgetItem * doctorItem=new QTableWidgetItem(doctor);
-   QTableWidgetItem * symptomItem=new QTableWidgetItem(symptom);
    QTableWidgetItem * prescriptionItem=new QTableWidgetItem(prescription);
    QTableWidgetItem * moneyItem = new QTableWidgetItem(money);
    QTableWidgetItem * adviceItem=new QTableWidgetItem(advice);
@@ -89,10 +87,9 @@ void disease::appendOneRow(QString name,QString dise,QString doctor,QString symp
    ui->tableWidget->setItem(0,0,nameItem);
    ui->tableWidget->setItem(0,1,diseItem);
    ui->tableWidget->setItem(0,2,doctorItem);
-   ui->tableWidget->setItem(0,3,symptomItem);
-   ui->tableWidget->setItem(0,4,prescriptionItem);
-   ui->tableWidget->setItem(0,5,moneyItem);
-   ui->tableWidget->setItem(0,6,adviceItem);
+   ui->tableWidget->setItem(0,3,prescriptionItem);
+   ui->tableWidget->setItem(0,4,moneyItem);
+   ui->tableWidget->setItem(0,5,adviceItem);
 
 
 }
@@ -115,9 +112,9 @@ void disease::on_pushButton_2_clicked()
     //转换成QByterarray发送
     QByteArray datagram=jsondoc.toJson();
     m_socket->writeDatagram(datagram, sql_ip, sql_port);
+    qDebug()<<"发送查看患者信息信号";
 
     connect(m_socket, SIGNAL(readyRead()), this, SLOT(read_data()));
-
 }
 
 void disease::on_pushButton_clicked()
@@ -128,12 +125,12 @@ void disease::on_pushButton_clicked()
 
 void disease::read_data()
 {
+    qDebug()<<"接受查看患者信息";
     //"name","disease","doctor","symbol","prescription","money","多读书多看报，少吃零食多睡觉"
     //接受数据库传来的信息
         QString name="aaa";
         QString disease="b";
         QString doctor="c";
-        QString symbol="d";
         QString prescription="e";
         QString money="f";
         QString advice="g";
@@ -155,17 +152,17 @@ void disease::read_data()
                 // 例如，打印出所有键值对
                 /*for (QString key : jsonObject.keys()) {
                     qDebug() << key << ": " << jsonObject.value(key).toString();*/
-                 name=jsonObject["name"].toString();
-                 disease=jsonObject["disease"].toString();
-                 doctor=jsonObject["doctor"].toString();
-                 symbol=jsonObject["symbol"].toString();
+                 name=jsonObject["patient_name"].toString();
+                 disease=jsonObject["diagnose"].toString();
+                 doctor=jsonObject["doctor_name"].toString();
+                 //symbol=jsonObject["symbol"].toString();
                  prescription=jsonObject["prescription"].toString();
-                 money=jsonObject["money"].toString();
+                 money=jsonObject["pay"].toString();
                  advice=jsonObject["advice"].toString();
 
                  //求数据库传送过来表中所需的数据
                   //appendOneRow("name","disease","doctor","symbol","prescription","money","多读书多看报，少吃零食多睡觉");//在这里输入传过来的信息
-                  appendOneRow(name,disease,doctor,symbol,prescription,money,advice);
+                  appendOneRow(name,disease,doctor,prescription,money,advice);
                }
             }
 

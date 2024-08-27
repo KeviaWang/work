@@ -1,4 +1,4 @@
-#include "login.h"
+﻿#include "login.h"
 #include "ui_login.h"
 #include "signup.h"
 #include "docmain.h"
@@ -28,8 +28,8 @@ login::login(QWidget *parent) :
     }
     qDebug()<<"my ip "<<my_ip<<endl;
 
-    my_port=8888;
-    sql_ip=QHostAddress("192.168.254.129");
+    my_port=8892;
+    sql_ip=QHostAddress("192.168.149.23");
     sql_port=8888;
 
     //接受数据绑定
@@ -81,16 +81,15 @@ void login::on_logBtn_clicked()
     else
     sign="3";
 
-
     QString datastr = QString(R"([
             {
                 "sign":"%1","username":"%2","password":"%3","ip":"%4","port":"%5"
             }
 
         ])").arg(sign).arg(username).arg(password).arg(my_ip.toString()).arg(my_port);
-
+    qDebug()<<datastr;
     QJsonDocument jsondoc=QJsonDocument::fromJson(datastr.toUtf8());
-
+    qDebug()<<jsondoc;
     //转换成QByterarray发送
     QByteArray datagram=jsondoc.toJson();
     m_socket->writeDatagram(datagram, sql_ip, sql_port);
@@ -114,11 +113,14 @@ void login::read_data()
                 if(ui->doctorButton->isChecked())
                 {
                 QMessageBox::information(NULL,"信息","登录成功");
+
                 MainUser=ui->userLineEdit->text().trimmed();
+
                 this->close();
-                docMain docM;
-                this->~login(); //每次跳转都析构当前界面
-                docM.show();
+                docMain* docM=new docMain;
+                docM->show();
+                qDebug()<<"进入医生主界面";
+                //this->~login(); //每次跳转都析构当前界面
 
                 }
                 else
@@ -127,8 +129,9 @@ void login::read_data()
                 MainUser=ui->userLineEdit->text();
                 this->close();
                 MainWindow *w = new MainWindow;
-                this->~login();
+                qDebug()<<"进入患者主界面";
                 w->show();
+                //this->~login();
                 }
 
             }

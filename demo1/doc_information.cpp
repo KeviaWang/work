@@ -9,7 +9,7 @@ doc_information::doc_information(QWidget *parent) :
     ui->setupUi(this);
 
     ui->tableWidget->setColumnCount(7);   //修改列数
-    ui->tableWidget->setRowCount(1);
+    ui->tableWidget->setRowCount(10);
 
     QStringList hlist;
     hlist << "姓名";
@@ -35,8 +35,8 @@ doc_information::doc_information(QWidget *parent) :
     }
 
     qDebug()<<"my ip "<<my_ip<<endl;
-    my_port=8888;
-    sql_ip=QHostAddress("192.168.254.129");
+    my_port=8890;
+    sql_ip=QHostAddress("192.168.149.23");
     sql_port=8888;
 
     //接受数据绑定
@@ -62,7 +62,7 @@ doc_information::~doc_information()
 void doc_information::appendOneRow(int row,QString name,QString gender,QString room,QString contact,QString positon,QString major,QString year)
 {
 
-
+    qDebug()<<"展示";
    QTableWidgetItem * nameItem=new QTableWidgetItem(name);
    QTableWidgetItem * genderItem=new QTableWidgetItem(gender);
    QTableWidgetItem * roomItem=new QTableWidgetItem(room);
@@ -79,7 +79,7 @@ void doc_information::appendOneRow(int row,QString name,QString gender,QString r
    majorItem->setTextAlignment(Qt::AlignCenter);
    yearItem->setTextAlignment(Qt::AlignCenter);
 
-
+    qDebug()<<nameItem;
 
    ui->tableWidget->setItem(row,0,nameItem);
    ui->tableWidget->setItem(row,1,genderItem);
@@ -119,6 +119,7 @@ void doc_information::on_pushButton_2_clicked()
     //转换成QByterarray发送
     QByteArray datagram=jsondoc.toJson();
     m_socket->writeDatagram(datagram, sql_ip, sql_port);
+    qDebug()<<"发送查看医生信息";
     //绑定发送信号槽
     connect(m_socket, SIGNAL(readyRead()), this, SLOT(read_data()));
 
@@ -126,12 +127,13 @@ void doc_information::on_pushButton_2_clicked()
 
 void doc_information::read_data()
 {
+    qDebug()<<"接收医生资料信息";
     //接受数据库传来的信息
         QString name="aaa";
         QString gender="b";
         QString room="c";
         QString contact="d";
-        QString posion="e";
+        QString position="e";
         QString major="f";
         QString year="g";
     //读取udp socket的数据缓冲区，接收数据
@@ -146,7 +148,7 @@ void doc_information::read_data()
             QJsonDocument jsonDoc = QJsonDocument::fromJson(datagram);
             QJsonArray  datagram_array=jsonDoc.array();
             int size = datagram_array.size();
-
+            qDebug()<<size;
             for (int i = 0; i < size; ++i)
             {
                 QJsonObject jsonObject = datagram_array[i].toObject();
@@ -158,13 +160,20 @@ void doc_information::read_data()
                  gender=jsonObject["gender"].toString();
                  room=jsonObject["room"].toString();
                  contact=jsonObject["contact"].toString();
-                 posion=jsonObject["posion"].toString();
+                 position=jsonObject["position"].toString();
                  major=jsonObject["major"].toString();
                  year=jsonObject["year"].toString();
-
-                 appendOneRow(i,name,gender,room,contact,posion,major,year);
+                 qDebug()<<name;
+                 appendOneRow(i,name,gender,room,contact,position,major,year);
 
                }
             }
+
+}
+
+void doc_information::on_pushButton_clicked()
+{
+    this->close();
+    this->~doc_information();
 
 }

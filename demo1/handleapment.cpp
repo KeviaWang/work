@@ -16,8 +16,8 @@ handleApment::handleApment(QWidget *parent) :
         }
     }
 
-    my_port=8888;
-    sql_ip=QHostAddress("192.168.254.129");
+    my_port=8891;
+    sql_ip=QHostAddress("192.168.149.23");
     sql_port=8888;
 
     // 接收数据时，需要将SOCKET与接收端口绑定在一起
@@ -59,11 +59,12 @@ void handleApment::on_tijiaoBtn_clicked()
                 "jiaofei":"%7",
                 "ip":"%8",
                 "port":"%9"
-            },
+            }
 
         ])").arg(7).arg(patient_name).arg(MainUser).arg(bingli).arg(chufang).arg(yizhu).arg(jiaofei).arg(my_ip.toString()).arg(my_port);
 
     QJsonDocument jsondoc=QJsonDocument::fromJson(datastr.toUtf8());
+    qDebug()<<"发送编写处方信息";
     //转换成QByterarray发送
     QByteArray datagram=jsondoc.toJson();
     m_socket->writeDatagram(datagram, sql_ip, sql_port);
@@ -77,6 +78,7 @@ void handleApment::on_pushButton_clicked()
 }
 void handleApment::recvdata()
 {
+    qDebug()<<"接收查看医生信息成败";
     //读取udp socket的数据缓冲区，接收数据
             while(m_socket->hasPendingDatagrams())
             {

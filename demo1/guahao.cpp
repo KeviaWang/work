@@ -22,7 +22,7 @@ Guahao::Guahao(QWidget *parent)
     }
 
     my_port=8888;
-    sql_ip=QHostAddress("192.168.254.129");
+    sql_ip=QHostAddress("192.168.149.23");
     sql_port=8888;
 
     // 接收数据时，需要将SOCKET与接收端口绑定在一起
@@ -81,12 +81,12 @@ void Guahao::populateComboBox()
 void Guahao::on_pushButton_clicked()
 {
     // 禁用按钮以防止重复点击
-    ui->pushButton->setEnabled(false);
+   // ui->pushButton->setEnabled(false);
 
     // 获取选择的日期和时间段
     QString selectedDate = ui->dateEdit->date().toString();
     QString selectedSlot = ui->comboBox->currentText();
-
+    qDebug()<<"DATE"<<selectedDate<<" time"<<selectedSlot;
     if (selectedSlot.isEmpty()) {
         QMessageBox::warning(this, "警告", "请选择一个时间段！");
         ui->pushButton->setEnabled(true);  // 重新启用按钮
@@ -105,11 +105,12 @@ void Guahao::on_pushButton_clicked()
                 "time": "%5",
                 "ip":"%6",
                 "port":"%7"
-            },
+            }
 
         ])").arg(10).arg(MainUser).arg(doctor_name).arg(selectedDate).arg(selectedSlot).arg(my_ip.toString()).arg(my_port);
 
     QJsonDocument jsondoc=QJsonDocument::fromJson(datastr.toUtf8());
+    qDebug()<<"发送挂号信息";
     //转换成QByterarray发送
     QByteArray datagram=jsondoc.toJson();
     m_socket->writeDatagram(datagram, sql_ip, sql_port);
@@ -118,7 +119,7 @@ void Guahao::on_pushButton_clicked()
 }
 void Guahao::read_data()
 {
-
+    qDebug()<<"接收挂号成败信息";
     //读取udp socket的数据缓冲区，接收数据
     while(m_socket->hasPendingDatagrams())
     {

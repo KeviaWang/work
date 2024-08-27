@@ -36,6 +36,8 @@ void on_pushButton_2_clicked();
 void read_data();
 
 
+void on_pushButton_clicked();
+
 private:
     Ui::doc_information *ui;
     QUdpSocket* m_socket;

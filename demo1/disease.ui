@@ -6,61 +6,80 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>902</width>
+    <height>618</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">#disease{border-image: url(:/back/蓝色渐变.jpg);}</string>
+   <string notr="true">#disease{border-image: url(:/new/prefix1/back/蓝色渐变.jpg);}</string>
   </property>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>690</x>
-     <y>510</y>
-     <width>91</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">#pushButton{border-radius:10px;}
-#pushButton{background-color: rgb(255, 255, 255);}
-</string>
-   </property>
-   <property name="text">
-    <string>quit</string>
-   </property>
-  </widget>
-  <widget class="QTableWidget" name="tableWidget">
+  <widget class="QFrame" name="frame">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>671</width>
-     <height>541</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_2">
-   <property name="geometry">
-    <rect>
-     <x>690</x>
-     <y>467</y>
-     <width>91</width>
-     <height>31</height>
+     <width>901</width>
+     <height>631</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">#pushButton_2{border-radius:10px;}
+    <string notr="true">#frame{border-image: url(:/new/prefix1/back/蓝色渐变.jpg);}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QTableWidget" name="tableWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>671</width>
+      <height>541</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>740</x>
+      <y>480</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#pushButton_2{border-radius:10px;}
 #pushButton_2{background-color: rgb(255, 255, 255);}
 </string>
-   </property>
-   <property name="text">
-    <string>确定</string>
-   </property>
+    </property>
+    <property name="text">
+     <string>确定</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>740</x>
+      <y>560</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#pushButton{border-radius:10px;}
+#pushButton{background-color: rgb(255, 255, 255);}
+</string>
+    </property>
+    <property name="text">
+     <string>quit</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>

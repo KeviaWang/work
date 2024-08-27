@@ -6,97 +6,116 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
-    <height>500</height>
+    <width>629</width>
+    <height>550</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">#doc_information{border-image: url(:/back/蓝色渐变.jpg);}</string>
+   <string notr="true">#doc_information{border-image: url(:/new/prefix1/back/蓝色渐变.jpg);}</string>
   </property>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>500</x>
-     <y>440</y>
-     <width>89</width>
-     <height>25</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">#pushButton{border-radius:10px;}
-#pushButton{background-color: rgb(255, 255, 255);}
-</string>
-   </property>
-   <property name="text">
-    <string>退出</string>
-   </property>
-  </widget>
-  <widget class="QTableWidget" name="tableWidget">
+  <widget class="QFrame" name="frame">
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>0</y>
-     <width>491</width>
-     <height>381</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_2">
-   <property name="geometry">
-    <rect>
-     <x>500</x>
-     <y>400</y>
-     <width>89</width>
-     <height>25</height>
+     <y>-1</y>
+     <width>631</width>
+     <height>551</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">#pushButton_2{border-radius:10px;}
-#pushButton_2{background-color: rgb(255, 255, 255);}
-</string>
+    <string notr="true">#frame{border-image: url(:/new/prefix1/back/蓝色渐变.jpg);}</string>
    </property>
-   <property name="text">
-    <string>确定</string>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
    </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit">
-   <property name="geometry">
-    <rect>
-     <x>4</x>
-     <y>400</y>
-     <width>201</width>
-     <height>25</height>
-    </rect>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
    </property>
-   <property name="styleSheet">
-    <string notr="true">#lineEdit{border-radius:5px;}
-#lineEdit{background-color: rgb(255, 255, 255);}
-</string>
-   </property>
-   <property name="placeholderText">
-    <string>请输入你想预定的医生姓名</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_3">
-   <property name="geometry">
-    <rect>
-     <x>4</x>
-     <y>440</y>
-     <width>89</width>
-     <height>25</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">#pushButton_3{border-radius:10px;}
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>2</x>
+      <y>440</y>
+      <width>89</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#pushButton_3{border-radius:10px;}
 #pushButton_3{background-color: rgb(255, 255, 255);}
 </string>
-   </property>
-   <property name="text">
-    <string>预约</string>
-   </property>
+    </property>
+    <property name="text">
+     <string>预约</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>2</x>
+      <y>400</y>
+      <width>201</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#lineEdit{border-radius:5px;}
+#lineEdit{background-color: rgb(255, 255, 255);}
+</string>
+    </property>
+    <property name="placeholderText">
+     <string>请输入你想预定的医生姓名</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>498</x>
+      <y>400</y>
+      <width>89</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#pushButton_2{border-radius:10px;}
+#pushButton_2{background-color: rgb(255, 255, 255);}
+</string>
+    </property>
+    <property name="text">
+     <string>确定</string>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="tableWidget">
+    <property name="geometry">
+     <rect>
+      <x>-2</x>
+      <y>0</y>
+      <width>491</width>
+      <height>381</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>499</x>
+      <y>450</y>
+      <width>89</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#pushButton{border-radius:10px;}
+#pushButton{background-color: rgb(255, 255, 255);}
+</string>
+    </property>
+    <property name="text">
+     <string>退出</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>

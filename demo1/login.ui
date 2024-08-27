@@ -6,23 +6,24 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1065</width>
-    <height>603</height>
+    <width>686</width>
+    <height>462</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">#login{border-image: url(:/back/登录.png);}</string>
+   <string notr="true">
+#frame{border-image: url(:/new/prefix1/back/登录.png);}</string>
   </property>
   <widget class="QFrame" name="frame">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>70</y>
-     <width>551</width>
-     <height>401</height>
+     <x>-70</x>
+     <y>-10</y>
+     <width>771</width>
+     <height>511</height>
     </rect>
    </property>
    <property name="frameShape">
@@ -104,8 +105,8 @@ font: 10pt &quot;Candara&quot;;</string>
    <widget class="QPushButton" name="quitBtn">
     <property name="geometry">
      <rect>
-      <x>260</x>
-      <y>300</y>
+      <x>280</x>
+      <y>290</y>
       <width>89</width>
       <height>25</height>
      </rect>
@@ -159,8 +160,8 @@ font: 14pt &quot;Candara&quot;;</string>
    <widget class="QPushButton" name="logBtn">
     <property name="geometry">
      <rect>
-      <x>260</x>
-      <y>180</y>
+      <x>280</x>
+      <y>190</y>
       <width>89</width>
       <height>25</height>
      </rect>
@@ -182,7 +183,7 @@ font: 14pt &quot;Candara&quot;;</string>
    <widget class="QPushButton" name="signup_btn">
     <property name="geometry">
      <rect>
-      <x>260</x>
+      <x>280</x>
       <y>240</y>
       <width>89</width>
       <height>25</height>

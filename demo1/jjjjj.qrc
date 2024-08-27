@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>back/555.png</file>
+        <file>back/登录.png</file>
+        <file>back/蓝色渐变.jpg</file>
+    </qresource>
+</RCC>

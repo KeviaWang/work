@@ -2,5 +2,6 @@
     <qresource prefix="/">
         <file>back/蓝色渐变.jpg</file>
         <file>back/登录.png</file>
+        <file>back/555.png</file>
     </qresource>
 </RCC>

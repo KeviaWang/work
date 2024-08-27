@@ -14,7 +14,7 @@
    <string>MainWidget</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">#MainWidget{border-image: url(:/back/蓝色渐变.jpg);}</string>
+   <string notr="true">#MainWidget{border-image: url(:/new/prefix1/back/蓝色渐变.jpg);}</string>
   </property>
   <widget class="QPushButton" name="sendButton">
    <property name="geometry">

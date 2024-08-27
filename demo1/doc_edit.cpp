@@ -18,7 +18,8 @@ doc_edit::doc_edit(QWidget *parent) :
     }
 
     my_port=8889;
-    sql_ip=QHostAddress("192.168.149.23");
+    //sql_ip=QHostAddress("192.168.149.23");
+    sql_ip=SQL_ip;
     sql_port=8888;
 
     // 接收数据时，需要将SOCKET与接收端口绑定在一起

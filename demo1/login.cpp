@@ -11,6 +11,7 @@
 #include <QDebug>
 
 QString MainUser="user";
+QHostAddress SQL_ip=QHostAddress("192.168.149.23");
 
 login::login(QWidget *parent) :
     QWidget(parent),
@@ -29,7 +30,8 @@ login::login(QWidget *parent) :
     qDebug()<<"my ip "<<my_ip<<endl;
 
     my_port=8892;
-    sql_ip=QHostAddress("192.168.149.23");
+    //sql_ip=QHostAddress("192.168.149.23");
+    sql_ip=SQL_ip;
     sql_port=8888;
 
     //接受数据绑定

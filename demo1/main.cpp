@@ -2,8 +2,10 @@
 #include <QApplication>
 #include "mainwindow.h"
 #include "signup.h"
+
 int main(int argc, char *argv[])
 {
+
     QApplication a(argc, argv);
     login dlg;
  /*   if(dlg.exec()==QDialog::Accepted)

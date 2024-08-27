@@ -15,7 +15,7 @@
 #include <QNetworkInterface>
 
 extern QString MainUser;
-
+extern QHostAddress SQL_ip;
 
 namespace Ui {
 class login;

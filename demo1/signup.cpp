@@ -24,7 +24,8 @@ signup::signup(QWidget *parent) :
 
     qDebug()<<"my ip "<<my_ip<<endl;
     my_port=8894;
-    sql_ip=QHostAddress("192.168.149.23");
+    //sql_ip=QHostAddress("192.168.149.23");
+    sql_ip=SQL_ip;
     sql_port=8888;
 
 

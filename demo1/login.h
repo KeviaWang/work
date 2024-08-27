@@ -16,6 +16,9 @@
 
 extern QString MainUser;
 extern QHostAddress SQL_ip;
+extern QString user_sign;
+extern QString recv_sign;
+
 
 namespace Ui {
 class login;

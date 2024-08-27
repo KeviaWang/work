@@ -1,5 +1,5 @@
-#ifndef MAINWIDGET_H
-#define MAINWIDGET_H
+#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
 
 #include <QWidget>
 #include <QTcpSocket>
@@ -19,7 +19,6 @@ class MainWidget : public QWidget
 
 public:
     explicit MainWidget(QWidget *parent = nullptr);
-
     ~MainWidget();
 
 private slots:
@@ -28,10 +27,6 @@ private slots:
     void on_SendButton_Clicked();
     void on_SelectFileButton_Clicked();
     void onFileReceived(const QString &fileName, const QByteArray &fileData);  // 处理文件接收的槽函数
-
-    void on_quitButton_clicked();
-
-    void on_sendButton_clicked();
 
 private:
     Ui::MainWidget *ui;

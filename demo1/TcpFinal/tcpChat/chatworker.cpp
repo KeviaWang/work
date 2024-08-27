@@ -8,7 +8,7 @@
 #include <QDataStream>
 #include <QFileInfo>
 #include <QIODevice>
-#include"login.h"
+
 
 ChatWorker::ChatWorker(QObject *parent)
     : QThread(parent), m_hasMessage(false), m_connected(false), m_socket(new QTcpSocket(this)),m_server(new QTcpServer(this))
@@ -130,7 +130,7 @@ void ChatWorker::onReadyRead()
                 clientSocket->flush();
                 }
             }
-            emit messageReceived(recv_sign + ":\n" + content);//连接数据库后直接抓取用户名作为前缀
+            emit messageReceived("Server received from " + senderAddress + ":" + QString::number(senderPort) + ": " + content);
         }
         else if (type == Protocol::FILE_TYPE)
         {
@@ -261,6 +261,7 @@ void ChatWorker::onNewConnection()
     }
 }
 
+
 void ChatWorker::run()
 {
     while (true) {
@@ -268,12 +269,12 @@ void ChatWorker::run()
             while (!m_hasMessage) {
                 m_messageCondition.wait(&m_mutex);  // 等待有消息到来
             }
-                      if (m_socket->state() == QAbstractSocket::ConnectedState) {
+
+            if (m_socket->state() == QAbstractSocket::ConnectedState) {
                 m_socket->write(m_messageToSend.toUtf8());  // 写入消息到套接字
                 m_socket->flush();  // 确保消息立即发送
             }
 
             m_hasMessage = false;  // 处理完消息后重置标志
         }
-
 }

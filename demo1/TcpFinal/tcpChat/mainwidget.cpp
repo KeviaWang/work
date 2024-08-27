@@ -4,8 +4,6 @@
 #include <QDebug>
 #include <QTcpSocket>
 #include <QFileDialog>
-#include "login.h"
-
 MainWidget::MainWidget(QWidget *parent)
     : QWidget(parent),
       ui(new Ui::MainWidget),
@@ -24,11 +22,12 @@ MainWidget::MainWidget(QWidget *parent)
                this, &MainWidget::onFileReceived);  // 连接文件接收信号
     connect(ui->connectButton, &QPushButton::clicked,
                 this, &MainWidget::on_ConnectButton_Clicked);  // 连接按钮
-    /*connect(ui->sendButton, &QPushButton::clicked,
-                this, &MainWidget::on_SendButton_Clicked);*/
+    connect(ui->sendButton, &QPushButton::clicked,
+                this, &MainWidget::on_SendButton_Clicked);
     connect(ui->SelectFileButton, &QPushButton::clicked,
                 this, &MainWidget::on_SelectFileButton_Clicked);
-    connect(ui->quitButton, &QPushButton::clicked, this, &MainWidget::on_quitButton_clicked);
+
+
 
     m_chatWorker->start();  // 启动聊天线程
 }
@@ -44,9 +43,9 @@ MainWidget::~MainWidget()
 
 void MainWidget::on_ConnectButton_Clicked()
 {
-    QString ipAddress = QString("192.168.159.68");  // 从输入框中获取 IP 地址
-    quint16 sendPort = 12345;  // 从输入框中获取发送端口
-    quint16 rcvPort =  30000;  // 从输入框中获取接收端口
+    QString ipAddress = ui->ipEdit->text();  // 从输入框中获取 IP 地址
+    quint16 sendPort = ui->sendEdit->text().toUInt();  // 从输入框中获取发送端口
+    quint16 rcvPort = ui->rcvEdit->text().toUInt();  // 从输入框中获取接收端口
 
     if (sendPort > 0 && rcvPort > 0)
     {
@@ -54,17 +53,11 @@ void MainWidget::on_ConnectButton_Clicked()
             {
                 // 启动服务器
                 m_chatWorker->startServer(rcvPort);//监听
-
             }
             else
             {
                 // 连接到服务器
                 m_chatWorker->connectToServer(ipAddress, sendPort);
-                // 隐藏接收端口编辑框
-                ui->rcvEdit->hide();
-                ui->sendEdit->hide();
-                ui->ipEdit->hide();
-                ui->connectButton->hide();
             }
     }
     else {qDebug() << "Invalid port";}
@@ -76,8 +69,8 @@ void MainWidget::on_SelectFileButton_Clicked()
     QString filePath = QFileDialog::getOpenFileName(this, "Select File");
     if (!filePath.isEmpty())
     {
-        QString ipAddress = QString("192.168.159.68");
-        quint16 port =  12345;
+        QString ipAddress = ui->ipEdit->text();
+        quint16 port = ui->sendEdit->text().toUInt();
         if (!ipAddress.isEmpty() && port > 0)
         {
             QHostAddress address(ipAddress);
@@ -113,64 +106,19 @@ void MainWidget::onFileReceived(const QString &fileName, const QByteArray &fileD
 
 void MainWidget::on_MessageReceived(const QString &message)
 {
-
-
-    QTextCursor cursor(ui->textDisplay->textCursor());
-          cursor.movePosition(QTextCursor::End);  // Move to the end of the document
-
-          // Create a block format for left alignment (default)
-          QTextBlockFormat blockFormat;
-          blockFormat.setAlignment(Qt::AlignLeft);
-
-          // Apply the block format
-          cursor.setBlockFormat(blockFormat);
-
-          // Insert the message
-          cursor.insertText(message + "\n");
-
-          // Ensure the textEdit scrolls to the bottom to show the latest message
-          ui->textDisplay->ensureCursorVisible();
-
+    qDebug() << "Message received in MainWidget:" << message;
+    ui->textDisplay->append(message);  // 显示接收到的消息
 }
 
-
-void MainWidget::on_quitButton_clicked()
-{
-    // 断开连接
-    m_chatWorker->disconnect();
-    // 关闭窗口
-    close();
-}
-
-
-void MainWidget::on_sendButton_clicked()
+void MainWidget::on_SendButton_Clicked()
 {
     QString message = ui->inputField->text();
-    QString ipAddress = QString("192.168.159.68");
-    quint16 port =  12345;
-    qDebug()<<message;
+    QString ipAddress = ui->ipEdit->text();
+    quint16 port = ui->sendEdit->text().toUInt();
+
     if (!message.isEmpty() && !ipAddress.isEmpty() && port > 0) {
-         QHostAddress address(ipAddress);
-                QTextCursor cursor(ui->textDisplay->textCursor());
-                cursor.movePosition(QTextCursor::End);  // Move to the end of the document
-
-                // Create a block format for right alignment
-                QTextBlockFormat blockFormat;
-                blockFormat.setAlignment(Qt::AlignRight);
-                // Apply the block format
-                cursor.setBlockFormat(blockFormat);
-
-                // Insert the message
-                cursor.insertText( ":"+user_sign+"\n"+message+"\n");
-
-                // Ensure the textEdit scrolls to the bottom to show the latest message
-                ui->textDisplay->ensureCursorVisible();
-
-                // Send the message
-                m_chatWorker->sendMessage(message, address, port);
-
-                // Clear the input field
-                ui->inputField->clear();
+        QHostAddress address(ipAddress);
+        m_chatWorker->sendMessage(message, address, port);
+        ui->inputField->clear();
     }
-
 }

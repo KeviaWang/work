@@ -12,6 +12,8 @@
 
 QString MainUser="user";
 QHostAddress SQL_ip=QHostAddress("192.168.159.23");
+QString user_sign="doctor";
+QString recv_sign="patient";
 
 login::login(QWidget *parent) :
     QWidget(parent),
@@ -79,9 +81,19 @@ void login::on_logBtn_clicked()
     //          6：查看挂号信息 7：编写病例 编写处方和缴费 8：查看病例、查看处方和缴费 9：查看医生信息 10：进行挂号
     QString sign;
     if(ui->doctorButton->isChecked())
-    sign="2";
+    {
+        sign="2";
+        QString user_sign="doctor";
+        QString recv_sign="patient";
+
+    }
     else
-    sign="3";
+    {
+        sign="3";
+        QString user_sign="patient";
+        QString recv_sign="doctor";
+    }
+
 
     QString datastr = QString(R"([
             {

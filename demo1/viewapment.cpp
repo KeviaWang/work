@@ -2,6 +2,7 @@
 #include "ui_viewapment.h"
 #include "platform.h"
 #include "handleapment.h"
+#include "mainwidget.h"
 
 viewApMent::viewApMent(QWidget *parent) :
     QWidget(parent),
@@ -122,8 +123,11 @@ void viewApMent::on_pushButton_2_clicked()
 
 void viewApMent::on_goutong_clicked()
 {
-    platform * plat = new platform;
-    plat->show();
+    //platform * plat = new platform;
+    //plat->show();
+    MainWidget *mwid = new MainWidget;
+    mwid->show();
+    QMetaObject::invokeMethod(mwid, "on_ConnectButton_Clicked", Qt::QueuedConnection);
 }
 
 void viewApMent::on_chufangyizhu_clicked()

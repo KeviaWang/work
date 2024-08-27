@@ -11,7 +11,7 @@
 #include <QDebug>
 
 QString MainUser="user";
-QHostAddress SQL_ip=QHostAddress("192.168.149.23");
+QHostAddress SQL_ip=QHostAddress("192.168.159.23");
 
 login::login(QWidget *parent) :
     QWidget(parent),

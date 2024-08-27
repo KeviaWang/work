@@ -17,6 +17,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    chatworker.cpp \
     disease.cpp \
     doc_edit.cpp \
     doc_information.cpp \
@@ -27,6 +28,7 @@ SOURCES += \
     healthassessment.cpp \
     login.cpp \
     main.cpp \
+    mainwidget.cpp \
     mainwindow.cpp \
     per_information.cpp \
     platform.cpp \
@@ -34,6 +36,7 @@ SOURCES += \
     viewapment.cpp
 
 HEADERS += \
+    chatworker.h \
     disease.h \
     doc_edit.h \
     doc_information.h \
@@ -43,9 +46,11 @@ HEADERS += \
     handleapment.h \
     healthassessment.h \
     login.h \
+    mainwidget.h \
     mainwindow.h \
     per_information.h \
     platform.h \
+    protocol.h \
     signup.h \
     viewapment.h
 
@@ -59,6 +64,7 @@ FORMS += \
     handleapment.ui \
     healthassessment.ui \
     login.ui \
+    mainwidget.ui \
     mainwindow.ui \
     per_information.ui \
     platform.ui \

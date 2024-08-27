@@ -1,6 +1,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "mainwidget.h"
+
 #include <QMainWindow>
 #include <QNetworkInterface>
 
@@ -13,7 +15,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
+    explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
 private slots:
@@ -29,5 +31,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    MainWidget *mainwidget;
+
 };
 #endif // MAINWINDOW_H

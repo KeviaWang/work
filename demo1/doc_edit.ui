@@ -14,7 +14,7 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">#doc_edit{border-image: url(:/picture/蓝色渐变.jpg);}</string>
+   <string notr="true">#doc_edit{border-image: url(:/back/蓝色渐变.jpg);}</string>
   </property>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">

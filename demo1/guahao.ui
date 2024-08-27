@@ -14,8 +14,8 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">#centralwidget{border-image: url(:/background/蓝色渐变.jpg);}
-#MainWindow{border-image: url(:/background/蓝色渐变.jpg);}
+   <string notr="true">#centralwidget{border-image: url(:/back/蓝色渐变.jpg);}
+#MainWindow{border-image: url(:/back/蓝色渐变.jpg);}
 </string>
   </property>
   <widget class="QWidget" name="centralwidget">

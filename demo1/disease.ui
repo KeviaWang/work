@@ -13,14 +13,22 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">#disease{border-image: url(:/back/蓝色渐变.jpg);}</string>
+  </property>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
      <x>690</x>
      <y>510</y>
-     <width>89</width>
-     <height>25</height>
+     <width>91</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#pushButton{border-radius:10px;}
+#pushButton{background-color: rgb(255, 255, 255);}
+</string>
    </property>
    <property name="text">
     <string>quit</string>
@@ -40,10 +48,15 @@
    <property name="geometry">
     <rect>
      <x>690</x>
-     <y>470</y>
-     <width>89</width>
-     <height>25</height>
+     <y>467</y>
+     <width>91</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#pushButton_2{border-radius:10px;}
+#pushButton_2{background-color: rgb(255, 255, 255);}
+</string>
    </property>
    <property name="text">
     <string>确定</string>

@@ -14,7 +14,7 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">#healthassessment{border-image: url(:/picture/蓝色渐变.jpg);}
+   <string notr="true">#healthassessment{border-image: url(:/back/蓝色渐变.jpg);}
 </string>
   </property>
   <widget class="QLineEdit" name="lineEdit">

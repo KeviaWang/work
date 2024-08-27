@@ -6,15 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>774</width>
-    <height>586</height>
+    <width>912</width>
+    <height>580</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">#per_information{border-image: url(:/picture/蓝色渐变.jpg);}</string>
+   <string notr="true">#per_information{border-image: url(:/back/登录.png);}</string>
   </property>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
@@ -290,19 +290,6 @@
    </property>
    <property name="placeholderText">
     <string>请输入你的身高</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>535</x>
-     <y>-14</y>
-     <width>241</width>
-     <height>271</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/picture/yyyssss.jpg&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
  </widget>

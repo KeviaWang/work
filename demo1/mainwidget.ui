@@ -13,17 +13,25 @@
   <property name="windowTitle">
    <string>MainWidget</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">#MainWidget{border-image: url(:/back/蓝色渐变.jpg);}</string>
+  </property>
   <widget class="QPushButton" name="sendButton">
    <property name="geometry">
     <rect>
-     <x>560</x>
-     <y>530</y>
-     <width>89</width>
-     <height>25</height>
+     <x>640</x>
+     <y>513</y>
+     <width>101</width>
+     <height>41</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">#sendButton{border-radius:10px;}
+#sendButton{background-color: rgb(255, 255, 255);}
+</string>
+   </property>
    <property name="text">
-    <string>send</string>
+    <string>发送</string>
    </property>
   </widget>
   <widget class="QTextEdit" name="textDisplay">
@@ -31,8 +39,8 @@
     <rect>
      <x>40</x>
      <y>70</y>
-     <width>481</width>
-     <height>371</height>
+     <width>581</width>
+     <height>391</height>
     </rect>
    </property>
   </widget>
@@ -40,9 +48,9 @@
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>530</y>
-     <width>481</width>
-     <height>25</height>
+     <y>514</y>
+     <width>581</width>
+     <height>41</height>
     </rect>
    </property>
   </widget>
@@ -92,14 +100,19 @@
   <widget class="QPushButton" name="SelectFileButton">
    <property name="geometry">
     <rect>
-     <x>220</x>
-     <y>480</y>
-     <width>89</width>
-     <height>25</height>
+     <x>530</x>
+     <y>470</y>
+     <width>91</width>
+     <height>31</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">#SelectFileButton{border-radius:10px;}
+#SelectFileButton{background-color: rgb(255, 255, 255);}
+</string>
+   </property>
    <property name="text">
-    <string>selectFile</string>
+    <string>发送文件</string>
    </property>
   </widget>
   <widget class="QPushButton" name="quitButton">

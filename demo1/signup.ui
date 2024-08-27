@@ -14,7 +14,7 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">#signup{border-image: url(:/picture/login.png);}</string>
+   <string notr="true">#signup{border-image: url(:/back/登录.png);}</string>
   </property>
   <widget class="QFrame" name="frame">
    <property name="geometry">

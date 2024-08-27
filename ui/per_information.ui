@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>per_information</class>
+ <widget class="QWidget" name="per_information">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>912</width>
+    <height>580</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#per_information{border-image: url(:/back/登录.png);}</string>
+  </property>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>600</x>
+     <y>510</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#pushButton{border-radius:10px;}
+#pushButton{background-color: rgb(255, 255, 255);}
+</string>
+   </property>
+   <property name="text">
+    <string>quit</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_5">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>143</y>
+     <width>131</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lineEdit_5{border-radius:5px;}
+#lineEdit_5{background-color: rgb(255, 255, 255);}
+</string>
+   </property>
+   <property name="placeholderText">
+    <string>请输入你的体重</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>20</y>
+     <width>131</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lineEdit{border-radius:5px;}
+#lineEdit{background-color: rgb(255, 255, 255);}
+</string>
+   </property>
+   <property name="placeholderText">
+    <string>请输入你的姓名</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_13">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>503</y>
+     <width>501</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lineEdit_13{border-radius:5px;}
+#lineEdit_13{background-color: rgb(255, 255, 255);}
+</string>
+   </property>
+   <property name="placeholderText">
+    <string>请输入你的紧急联系人</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_8">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>303</y>
+     <width>231</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lineEdit_8{border-radius:5px;}
+#lineEdit_8{background-color: rgb(255, 255, 255);}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="placeholderText">
+    <string>请输入你的身份证号</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_12">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>463</y>
+     <width>501</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lineEdit_12{border-radius:5px;}
+#lineEdit_12{background-color: rgb(255, 255, 255);}
+</string>
+   </property>
+   <property name="placeholderText">
+    <string>请输入你的保险信息</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>63</y>
+     <width>131</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lineEdit_2{border-radius:5px;}
+#lineEdit_2{background-color: rgb(255, 255, 255);}
+</string>
+   </property>
+   <property name="placeholderText">
+    <string>请输入你的性别</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_6">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>223</y>
+     <width>231</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lineEdit_6{border-radius:5px;}
+#lineEdit_6{background-color: rgb(255, 255, 255);}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="placeholderText">
+    <string>请输入你的联系方式</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>600</x>
+     <y>440</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#pushButton_2{border-radius:10px;}
+#pushButton_2{background-color: rgb(255, 255, 255);}
+</string>
+   </property>
+   <property name="text">
+    <string>确定</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_9">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>343</y>
+     <width>501</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lineEdit_9{border-radius:5px;}
+#lineEdit_9{background-color: rgb(255, 255, 255);}
+</string>
+   </property>
+   <property name="placeholderText">
+    <string>请输入你的病史</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_3">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>183</y>
+     <width>231</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lineEdit_3{border-radius:5px;}
+#lineEdit_3{background-color: rgb(255, 255, 255);}
+</string>
+   </property>
+   <property name="placeholderText">
+    <string>请输入你的出生日期(20xx-xx-xx)</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_10">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>383</y>
+     <width>501</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lineEdit_10{border-radius:5px;}
+#lineEdit_10{background-color: rgb(255, 255, 255);}
+</string>
+   </property>
+   <property name="placeholderText">
+    <string>请输入你的家族史</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_7">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>263</y>
+     <width>231</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lineEdit_7{border-radius:5px;}
+#lineEdit_7{background-color: rgb(255, 255, 255);}
+</string>
+   </property>
+   <property name="placeholderText">
+    <string>请输入你的家庭住址</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_11">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>423</y>
+     <width>501</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lineEdit_11{border-radius:5px;}
+#lineEdit_11{background-color: rgb(255, 255, 255);}
+</string>
+   </property>
+   <property name="placeholderText">
+    <string>请输入你的药物使用情况</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_4">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>103</y>
+     <width>131</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lineEdit_4{border-radius:5px;}
+#lineEdit_4{background-color: rgb(255, 255, 255);}
+</string>
+   </property>
+   <property name="placeholderText">
+    <string>请输入你的身高</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>per_information</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>524</x>
+     <y>452</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>299</x>
+     <y>249</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

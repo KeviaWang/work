@@ -1,4 +1,4 @@
-QT       += core gui sql network
+QT       += core gui sql network charts
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -23,6 +23,7 @@ SOURCES += \
     doc_information.cpp \
     doc_plat.cpp \
     docmain.cpp \
+    drawdialog.cpp \
     guahao.cpp \
     handleapment.cpp \
     healthassessment.cpp \
@@ -42,6 +43,7 @@ HEADERS += \
     doc_information.h \
     doc_plat.h \
     docmain.h \
+    drawdialog.h \
     guahao.h \
     handleapment.h \
     healthassessment.h \
@@ -60,6 +62,7 @@ FORMS += \
     doc_information.ui \
     doc_plat.ui \
     docmain.ui \
+    drawdialog.ui \
     guahao.ui \
     handleapment.ui \
     healthassessment.ui \

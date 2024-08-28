@@ -88,6 +88,19 @@
      <string>退出</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="shujutu">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>280</y>
+      <width>101</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>数据图</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>

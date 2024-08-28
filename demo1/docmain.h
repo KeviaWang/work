@@ -3,7 +3,7 @@
 
 #include <QWidget>
 #include <QNetworkInterface>
-
+#include "drawdialog.h"
 namespace Ui {
 class docMain;
 }
@@ -21,6 +21,8 @@ private slots:
 
     void on_bingqingchuli_clicked();
 
+
+    void on_shujutu_clicked();
 
 private:
     Ui::docMain *ui;

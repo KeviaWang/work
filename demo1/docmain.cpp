@@ -28,3 +28,10 @@ void docMain::on_bingqingchuli_clicked()
 
 }
 
+
+void docMain::on_shujutu_clicked()
+{
+    drawDialog * draw=new drawDialog;
+    draw->show();
+
+}

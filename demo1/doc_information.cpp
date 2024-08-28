@@ -155,8 +155,8 @@ void doc_information::read_data()
                 QJsonObject jsonObject = datagram_array[i].toObject();
                 // 处理jsonObject
                 // 例如，打印出所有键值对
-                /*for (QString key : jsonObject.keys()) {
-                    qDebug() << key << ": " << jsonObject.value(key).toString();*/
+                for (QString key : jsonObject.keys()) {
+                    qDebug() << key << ": " << jsonObject.value(key).toString();}
                  name=jsonObject["name"].toString();
                  gender=jsonObject["gender"].toString();
                  room=jsonObject["room"].toString();
